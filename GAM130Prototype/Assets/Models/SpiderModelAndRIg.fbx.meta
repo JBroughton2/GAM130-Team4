@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: a757aee9787c57e4c8ccfad9c028480a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: pasted__AbdomenEnd
+    100002: pasted__ArmBaseL
+    100004: pasted__ArmBaseR
+    100006: pasted__ArmEndL
+    100008: pasted__ArmEndR
+    100010: pasted__ArmMidL
+    100012: pasted__ArmMidR
+    100014: pasted__ArmTopL
+    100016: pasted__ArmTopR
+    100018: pasted__BackLegBaseL
+    100020: pasted__BackLegEndL
+    100022: pasted__BackLegMidL
+    100024: pasted__BackLegTopL
+    100026: pasted__BackRegBaseR
+    100028: pasted__BackRegEndR
+    100030: pasted__BackRegMidR
+    100032: pasted__BackRegTopR
+    100034: pasted__ForwardSpine
+    100036: pasted__FrontLegBaseL
+    100038: pasted__FrontLegEndL
+    100040: pasted__FrontLegMidL
+    100042: pasted__FrontLegTopL
+    100044: pasted__FrontRegBaseR
+    100046: pasted__FrontRegEndR
+    100048: pasted__FrontRegMidR
+    100050: pasted__FrontRegTopR
+    100052: pasted__group
+    100054: pasted__group1
+    100056: pasted__group2
+    100058: pasted__group3
+    100060: pasted__group4
+    100062: pasted__Head
+    100064: pasted__ikHandle1
+    100066: pasted__ikHandle2
+    100068: pasted__ikHandle3
+    100070: pasted__ikHandle4
+    100072: pasted__ikHandle5
+    100074: pasted__ikHandle6
+    100076: pasted__JawBaseL
+    100078: pasted__JawBaseR
+    100080: pasted__JawEndL
+    100082: pasted__JawEndR
+    100084: pasted__JawMidL
+    100086: pasted__JawMidR
+    100088: pasted__MidLegBaseL
+    100090: pasted__MidLegEndL
+    100092: pasted__MidLegMidL
+    100094: pasted__MidLegTopL
+    100096: pasted__MidRegBaseR
+    100098: pasted__MidRegEndR
+    100100: pasted__MidRegMidR
+    100102: pasted__MidRegTopR
+    100104: pasted__Neck
+    100106: pasted__nurbsCircle1
+    100108: pasted__pasted__group
+    100110: pasted__pasted__group1
+    100112: pasted__pasted__group2
+    100114: pasted__pasted__group2 1
+    100116: pasted__pasted__nurbsCircle1
+    100118: pasted__pasted__nurbsCircle1 1
+    100120: pasted__pasted__pasted__nurbsCircle1
+    100122: pasted__pasted__pasted__nurbsCircle1 1
+    100124: pasted__pasted__pasted__nurbsCircle1 2
+    100126: pasted__RootSpine
+    100128: pasted__Spider_Monster
+    100130: pasted__SpiderBase
+    100132: pasted__Spine1
+    100134: pasted__Spine2
+    100136: pasted__Spine3
+    100138: //RootNode
+    400000: pasted__AbdomenEnd
+    400002: pasted__ArmBaseL
+    400004: pasted__ArmBaseR
+    400006: pasted__ArmEndL
+    400008: pasted__ArmEndR
+    400010: pasted__ArmMidL
+    400012: pasted__ArmMidR
+    400014: pasted__ArmTopL
+    400016: pasted__ArmTopR
+    400018: pasted__BackLegBaseL
+    400020: pasted__BackLegEndL
+    400022: pasted__BackLegMidL
+    400024: pasted__BackLegTopL
+    400026: pasted__BackRegBaseR
+    400028: pasted__BackRegEndR
+    400030: pasted__BackRegMidR
+    400032: pasted__BackRegTopR
+    400034: pasted__ForwardSpine
+    400036: pasted__FrontLegBaseL
+    400038: pasted__FrontLegEndL
+    400040: pasted__FrontLegMidL
+    400042: pasted__FrontLegTopL
+    400044: pasted__FrontRegBaseR
+    400046: pasted__FrontRegEndR
+    400048: pasted__FrontRegMidR
+    400050: pasted__FrontRegTopR
+    400052: pasted__group
+    400054: pasted__group1
+    400056: pasted__group2
+    400058: pasted__group3
+    400060: pasted__group4
+    400062: pasted__Head
+    400064: pasted__ikHandle1
+    400066: pasted__ikHandle2
+    400068: pasted__ikHandle3
+    400070: pasted__ikHandle4
+    400072: pasted__ikHandle5
+    400074: pasted__ikHandle6
+    400076: pasted__JawBaseL
+    400078: pasted__JawBaseR
+    400080: pasted__JawEndL
+    400082: pasted__JawEndR
+    400084: pasted__JawMidL
+    400086: pasted__JawMidR
+    400088: pasted__MidLegBaseL
+    400090: pasted__MidLegEndL
+    400092: pasted__MidLegMidL
+    400094: pasted__MidLegTopL
+    400096: pasted__MidRegBaseR
+    400098: pasted__MidRegEndR
+    400100: pasted__MidRegMidR
+    400102: pasted__MidRegTopR
+    400104: pasted__Neck
+    400106: pasted__nurbsCircle1
+    400108: pasted__pasted__group
+    400110: pasted__pasted__group1
+    400112: pasted__pasted__group2
+    400114: pasted__pasted__group2 1
+    400116: pasted__pasted__nurbsCircle1
+    400118: pasted__pasted__nurbsCircle1 1
+    400120: pasted__pasted__pasted__nurbsCircle1
+    400122: pasted__pasted__pasted__nurbsCircle1 1
+    400124: pasted__pasted__pasted__nurbsCircle1 2
+    400126: pasted__RootSpine
+    400128: pasted__Spider_Monster
+    400130: pasted__SpiderBase
+    400132: pasted__Spine1
+    400134: pasted__Spine2
+    400136: pasted__Spine3
+    400138: //RootNode
+    2100000: lambert1
+    4300000: pasted__Spider_Monster
+    9500000: //RootNode
+    13700000: pasted__Spider_Monster
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
