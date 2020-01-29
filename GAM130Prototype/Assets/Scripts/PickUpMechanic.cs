@@ -7,13 +7,6 @@ public class PickUpMechanic : MonoBehaviour
 {
     public bool canPick;
     public GameObject uiPick;
-    //public Transform target;
-    public float speed;
-    //public GameObject Player;
-
-    public Rigidbody[] childRigidbody;
-    private GameObject lastObject;
-
 
     // Use this for initialization
     void Start()
@@ -46,28 +39,13 @@ public class PickUpMechanic : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && canPick == true)
             {
                 hit.collider.GetComponent<PickedObject>().IsPickedUp = true;
-                //Destroy(hit);
-               
+                Destroy(hit.transform.gameObject);
+                //Add something to the resources value when we have them added. I plan to use enums for different objects
 
 
             }
 
         }
 
-        if (Input.GetMouseButton(1))
-        {
-            if (lastObject != null)
-            {
-                lastObject.GetComponent<PickedObject>().IsPickedUp = false;
-            }
-
-            childRigidbody = GetComponentsInChildren<Rigidbody>();
-            foreach (Rigidbody body in childRigidbody)
-            {
-                body.useGravity = true;
-                body.isKinematic = false;
-            }
-            transform.DetachChildren();
-        }
     }
 }
