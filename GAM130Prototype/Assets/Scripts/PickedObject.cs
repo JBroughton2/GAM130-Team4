@@ -12,10 +12,7 @@ public enum Food
 public class PickedObject : MonoBehaviour
 {
     public Food Name;
-
-    public float yOffset;
     private Rigidbody RB;
-
     private Coroutine coroutine;
 
     private bool isPickedup;
