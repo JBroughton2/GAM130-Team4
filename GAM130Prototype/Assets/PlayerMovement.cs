@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance;
     public LayerMask groundMask;
     public float jumpHeight;
+    public GameObject flashlight;
+    public bool flashlightOn;
 
     private bool isGrounded;
     private Vector3 velocity;
@@ -37,10 +39,22 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
         
+        //Jump mechanic using a formula for calulating the force needed to jump relative to the gravity in the game
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
+
+        if (Input.GetKeyDown(KeyCode.F) && !flashlightOn)
+        {
+            flashlight.SetActive(true);
+            flashlightOn = true;
+        }else if (Input.GetKeyDown(KeyCode.F) && flashlightOn)
+        {
+            flashlight.SetActive(false);
+            flashlightOn = false;
+        }
+
         
         //this builds the velocity so the player can fall as if gravity is acting on it
         velocity.y += gravity * Time.deltaTime;
