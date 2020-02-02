@@ -1051,7 +1051,7 @@ PrefabInstance:
     - target: {fileID: 4926516711624024260, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d,
         type: 3}
       propertyPath: sprintMultiplier
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d, type: 3}

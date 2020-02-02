@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement Variables")]
+    [Header("Base Movement")]
     public CharacterController controller;
     public float speed = 12f;
     public float gravity = -9.81f;
     public float x;
     public float z;
-    public float sprintMultiplier;
+    private Vector3 velocity;
+
+    [Header("Jumping & Ground Checking")]
     public Transform groundCheck;
     public float groundDistance;
     public LayerMask groundMask;
     public float jumpHeight;
+    private bool isGrounded;
+    
+    [Header("Flashlight ")]
     public GameObject flashlight;
     public bool flashlightOn;
 
-    private bool isGrounded;
-    private Vector3 velocity;
+    [Header("Sprinting")]
+    public float sprintMultiplier;
 
     // Update is called once per frame
     void Update()
