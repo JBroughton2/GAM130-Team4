@@ -167,6 +167,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 70
@@ -392,6 +394,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 70
@@ -967,6 +971,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4926516711624024262, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 625130254, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534669907, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d, type: 3}
       propertyPath: uiPick
       value: 
@@ -975,10 +988,6 @@ PrefabInstance:
       propertyPath: uiInteract
       value: 
       objectReference: {fileID: 143334339}
-    - target: {fileID: 625130254, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4926516711624024257, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1039,10 +1048,10 @@ PrefabInstance:
       propertyPath: flashlight
       value: 
       objectReference: {fileID: 625130254}
-    - target: {fileID: 4926516711624024262, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d,
+    - target: {fileID: 4926516711624024260, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d,
         type: 3}
-      propertyPath: m_Name
-      value: Player
+      propertyPath: sprintMultiplier
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dd57a0a3e8a4c6479c6eae3dce03e8d, type: 3}
