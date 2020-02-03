@@ -5,26 +5,32 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Base Movement")]
-    public CharacterController controller;
-    public float speed = 12f;
-    public float gravity = -9.81f;
-    public float x;
-    public float z;
+    [SerializeField]
+    private float speed = 12f;
+    [SerializeField]
+    private float gravity = -9.81f;
+    private CharacterController controller;
+    private float x;
+    private float z;
     private Vector3 velocity;
 
     [Header("Jumping & Ground Checking")]
-    public Transform groundCheck;
-    public float groundDistance;
-    public LayerMask groundMask;
-    public float jumpHeight;
+    [SerializeField]
+    private Transform groundCheck;
+    [SerializeField]
+    private float jumpHeight;
+    private float groundDistance;
+    private LayerMask groundMask;
     private bool isGrounded;
     
     [Header("Flashlight ")]
-    public GameObject flashlight;
-    public bool flashlightOn;
+    [Space]
+    [SerializeField]
+    private GameObject flashlight;
+    private bool flashlightOn;
 
     [Header("Sprinting")]
-    public float sprintMultiplier;
+    private float sprintMultiplier;
 
     // Update is called once per frame
     void Update()
