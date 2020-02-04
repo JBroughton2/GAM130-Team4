@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 12f;
     [SerializeField]
     private float gravity = -9.81f;
-    public CharacterController controller;
+    private CharacterController controller;
     private float x;
     private float z;
     private Vector3 velocity;
@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private Transform groundCheck;
     [SerializeField]
     private float jumpHeight;
-    private float groundDistance;
-    private LayerMask groundMask;
+    private float groundDistance = 0.2f;
+    public LayerMask groundMask;
     private bool isGrounded;
     
     [Header("Flashlight ")]
@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         viewMod = GameObject.Find("ViewModelIdle").GetComponent<Animator>();
+        controller = GetComponent<CharacterController>();
     }
 
 

@@ -6,8 +6,8 @@ using UnityEngine;
 public class InteractMechanic : MonoBehaviour
 {
     public bool canPick;
-    //public GameObject uiPick;
-    //public GameObject uiInteract;
+    public GameObject uiPick;
+    public GameObject uiInteract;
     public Animator viewMod;
     public bool Animating;
 
@@ -30,26 +30,30 @@ public class InteractMechanic : MonoBehaviour
             if (hit.collider.GetComponent<PickedObject>() != null)
             {
                 canPick = true;
-                //uiPick.SetActive(true);
+                uiPick.SetActive(true);
                 
 
                 Debug.Log("PickUp");
             }
+            else
+            {
+                uiPick.SetActive(false);
+
+                canPick = false;
+            }
+
 
             if (hit.collider.GetComponent<InteractableButton>() != null)
             {
                 hit.collider.GetComponent<InteractableButton>().buttonClicked = true;
-                //uiInteract.SetActive(true);
+                uiInteract.SetActive(true);
                 //viewMod.SetTrigger("Push");
 
                 Debug.Log("Interactable");
             }
-
             else
             {
-                //uiPick.SetActive(false);
-
-                canPick = false;
+                uiInteract.SetActive(false);
             }
 
             if (Input.GetMouseButtonDown(0) && canPick == true && Animating == false)
