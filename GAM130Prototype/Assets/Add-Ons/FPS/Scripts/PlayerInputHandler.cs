@@ -73,6 +73,26 @@ public class PlayerInputHandler : MonoBehaviour
         return false;
     }
 
+    public bool GetInteractInputDown()
+    {
+        if (CanProcessInput())
+        {
+            return Input.GetButtonDown(GameConstants.k_ButtonNameInteract);
+        }
+
+        return false;
+    }
+
+    public bool GetInteractInputHeld()
+    {
+        if (CanProcessInput())
+        {
+            return Input.GetButton(GameConstants.k_ButtonNameInteract);
+        }
+
+        return false;
+    }
+
     public bool GetJumpInputHeld()
     {
         if (CanProcessInput())
