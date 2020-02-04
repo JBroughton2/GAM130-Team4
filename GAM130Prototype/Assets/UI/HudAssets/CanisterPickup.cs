@@ -8,6 +8,8 @@ public class CanisterPickup : MonoBehaviour
 {
     public void test() {
         Debug.Log("hello");
+
+
     }
 
     // Start is called before the first frame update
