@@ -1,32 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OxygenBarScript : MonoBehaviour
 {
     bool decreasing = true;
-    float oxygen = (float)1.0;
-    float Ammount_Decrease = (float)0.0005;
-   
-    private void Nothing() {
+    public float maxOxygen = 100;
+    private float oxygen = (float)100;
+    [Range(0.1f, 100)]
+    public float Ammount_Decrease = (float)1;
+    public float nothingDelayTime = 0.1f;
+    public Image fillBar;
 
+    private Coroutine nothingRoutine;
+
+    void Awake()
+    {
+        oxygen = maxOxygen;
+    }
+
+    private IEnumerator Nothing() 
+    {
+        //Debug.Log("Before");
+        yield return new WaitForSeconds(nothingDelayTime);
+        //Debug.Log("After");
+        nothingRoutine = null;
     }
 
     
     private void Update()
     {
         
-        if ((oxygen > Ammount_Decrease) && (decreasing = true))
+        if ((oxygen > 0) && (decreasing = true))
         {
-            oxygen = oxygen - Ammount_Decrease;
+            oxygen = oxygen - Ammount_Decrease * Time.deltaTime;
 
-            Transform bar = transform.Find("Bar");
-            bar.localScale = new Vector3(oxygen, 1f);
+            fillBar.fillAmount = oxygen / maxOxygen;
 
-            Invoke("Nothing", 0.1f);
+            if (nothingRoutine == null)
+                nothingRoutine = StartCoroutine(Nothing());
         }
-
-
 
 
     }
