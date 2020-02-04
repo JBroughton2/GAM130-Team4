@@ -6,14 +6,17 @@ using UnityEngine;
 public class InteractMechanic : MonoBehaviour
 {
     public bool canPick;
-    public GameObject uiPick;
-    public GameObject uiInteract;
+    //public GameObject uiPick;
+    //public GameObject uiInteract;
+    public Animator viewMod;
+    public bool Animating;
 
     // Use this for initialization
     void Start()
     {
         canPick = false;
-        uiPick.SetActive(false);
+        //uiPick.SetActive(false);
+        viewMod = GameObject.Find("ViewModelIdle").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,33 +30,67 @@ public class InteractMechanic : MonoBehaviour
             if (hit.collider.GetComponent<PickedObject>() != null)
             {
                 canPick = true;
-                uiPick.SetActive(true);
+                //uiPick.SetActive(true);
+                
+
                 Debug.Log("PickUp");
             }
 
             if (hit.collider.GetComponent<InteractableButton>() != null)
             {
                 hit.collider.GetComponent<InteractableButton>().buttonClicked = true;
-                uiInteract.SetActive(true);
+                //uiInteract.SetActive(true);
+                //viewMod.SetTrigger("Push");
+
                 Debug.Log("Interactable");
             }
 
             else
             {
-                uiPick.SetActive(false);
+                //uiPick.SetActive(false);
+
                 canPick = false;
             }
 
-            if (Input.GetMouseButtonDown(0) && canPick == true)
+            if (Input.GetMouseButtonDown(0) && canPick == true && Animating == false)
             {
                 hit.collider.GetComponent<PickedObject>().IsPickedUp = true;
                 Destroy(hit.transform.gameObject);
+                viewMod.SetTrigger("Grab");
+                StartCoroutine(ResetAction());
+                Animating = true;
                 //Add something to the resources value when we have them added. I plan to use enums for different objects
 
-
             }
-
         }
+        else if (Input.GetMouseButtonDown(0) && Animating == false)
+        {
+            viewMod.SetTrigger("Punch");
+            StartCoroutine(ResetAction());
+            Animating = true;
+        }
+
+
+    }
+
+    IEnumerator ResetAction()
+    {
+        yield return new WaitForSeconds(0.4f);
+
+        viewMod.ResetTrigger("Punch");
+
+        viewMod.ResetTrigger("Push");
+
+        viewMod.ResetTrigger("Grab");
+
+        Animating = false;
+
+
+    }
+    void Land()
+    {
+        viewMod.ResetTrigger("Jump");
+
 
     }
 }

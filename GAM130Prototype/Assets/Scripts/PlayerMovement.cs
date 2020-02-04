@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 12f;
     [SerializeField]
     private float gravity = -9.81f;
-    private CharacterController controller;
+    public CharacterController controller;
     private float x;
     private float z;
     private Vector3 velocity;
@@ -32,11 +32,23 @@ public class PlayerMovement : MonoBehaviour
     [Header("Sprinting")]
     private float sprintMultiplier;
 
+    [Header("Animation")]
+    public Animator viewMod;
+
+    void Start()
+    {
+        viewMod = GameObject.Find("ViewModelIdle").GetComponent<Animator>();
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
         //creates a small sphere that outputs a check value depending on what is in sphere
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2.5f);
         
         //resets the velocity value if the player is grounded and not falling anymore.
         if(isGrounded && velocity.y < 0)
@@ -44,6 +56,11 @@ public class PlayerMovement : MonoBehaviour
             //is negative two just in case it happens before player hits the floor
             velocity.y = -2;
         }
+        else
+        {
+            viewMod.SetBool("Grounded", false);
+        }
+        
 
         PlayerMove();
         PlayerJump();
@@ -69,6 +86,21 @@ public class PlayerMovement : MonoBehaviour
             Vector3 sprint = transform.right * x + transform.forward * z;
             controller.Move(sprint * speed * sprintMultiplier * Time.deltaTime);
         }
+
+        if (Input.GetAxis("Horizontal") != 0 && isGrounded)
+        {
+            viewMod.SetBool("Moving", true);
+        }
+        else if (isGrounded && Input.GetAxis("Vertical") != 0)
+        {
+            viewMod.SetBool("Moving", true);
+        }
+        else
+        {
+            viewMod.SetBool("Moving", false);
+        }
+
+
     }
     void PlayerJump()
     {
@@ -76,7 +108,16 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            viewMod.SetTrigger("Jump");
+            viewMod.SetBool("Grounded", false);
+            Debug.Log("Jumping");
         }
+        else if (viewMod.GetBool("Grounded") == false && isGrounded)
+        {
+            viewMod.ResetTrigger("Jump");
+            viewMod.SetBool("Grounded", true);
+        }
+        
     }
 
     void Flashlight()
@@ -93,4 +134,12 @@ public class PlayerMovement : MonoBehaviour
             flashlightOn = false;
         }
     }
+
+    void Land()
+    {
+        viewMod.ResetTrigger("Jump");
+        viewMod.SetBool("Grounded", true);
+
+    }
+
 }
