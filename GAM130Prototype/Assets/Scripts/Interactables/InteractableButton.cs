@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class InteractableButton : Interactable
 {
+    [Tooltip("Use switch rather than button archetype")]
+    public bool m_switch = false;
+    bool m_switchValue = false;
     [Tooltip("Prevents the button from being interacted with again for this many seconds. " +
         "ideally should be longer than any animations associated with it")]
     public float m_interactCooldown = 2f;
@@ -81,7 +84,15 @@ public class InteractableButton : Interactable
             else StartCoroutine(doAction());
 
             //do button animation
-            if(m_buttonAnimator != null) m_buttonAnimator.SetTrigger("Pressed");
+            if (m_buttonAnimator != null)
+            {
+                if (!m_switch) m_buttonAnimator.SetTrigger("Pressed");
+                else
+                {
+                    m_switchValue = !m_switchValue;
+                    m_buttonAnimator.SetBool("Pressed", m_switchValue);
+                }
+            }
 
             //do player animation
             if (m_playerAnimator != null) m_playerAnimator.SetTrigger("Push");
@@ -95,5 +106,11 @@ public class InteractableButton : Interactable
     }
     protected override void OnUnHighlight() {        
         base.OnUnHighlight();       
+    }
+
+    void Update()
+    {
+        //Debug
+        //if(m_switch) Debug.Log("switch: " + m_buttonAnimator.GetBool("Pressed"));
     }
 }
