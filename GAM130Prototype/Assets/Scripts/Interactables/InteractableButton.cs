@@ -40,9 +40,20 @@ public class InteractableButton : Interactable
     Animator m_buttonAnimator = null;    
 
     public UnityEvent m_action;   
-    IEnumerator doAction() {
+    IEnumerator doForwardAction() {
         yield return new WaitForSeconds(m_actionDelay);
         m_action.Invoke();        
+    }
+    public UnityEvent m_reverseAction;
+    IEnumerator doReverseAction()
+    {
+        yield return new WaitForSeconds(m_actionDelay);
+        m_reverseAction.Invoke();
+    }
+    void doAction()
+    {
+        if (!m_switchValue) StartCoroutine(doForwardAction());
+        else StartCoroutine(doReverseAction());
     }
 
     void Start()
@@ -79,9 +90,9 @@ public class InteractableButton : Interactable
 
             //check if action limit has been reached
             if(m_maxActions > 0) {
-                if (m_interactionCount <= m_maxActions) StartCoroutine(doAction());
+                if (m_interactionCount <= m_maxActions) doAction();
             }
-            else StartCoroutine(doAction());
+            else doAction();
 
             //do button animation
             if (m_buttonAnimator != null)
