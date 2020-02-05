@@ -12,20 +12,30 @@ public class OxygenBarScript : MonoBehaviour
     public float Ammount_Decrease = (float)1;
     public float nothingDelayTime = 0.1f;
     public Image fillBar;
+    [Range(1,100)]
+    public int addAmount = 30;
 
-    private Coroutine nothingRoutine;
+    private Coroutine TimeDelayRoutine;
 
     void Awake()
     {
         oxygen = maxOxygen;
     }
 
-    private IEnumerator Nothing() 
+    private IEnumerator TimeDelay() 
     {
         //Debug.Log("Before");
         yield return new WaitForSeconds(nothingDelayTime);
         //Debug.Log("After");
-        nothingRoutine = null;
+        TimeDelayRoutine = null;
+    }
+
+    private void addOxygen() 
+    {
+        if (oxygen + addAmount > maxOxygen)
+            oxygen = maxOxygen;
+        else
+            oxygen = oxygen + addAmount;
     }
 
     
@@ -38,8 +48,8 @@ public class OxygenBarScript : MonoBehaviour
 
             fillBar.fillAmount = oxygen / maxOxygen;
 
-            if (nothingRoutine == null)
-                nothingRoutine = StartCoroutine(Nothing());
+            if (TimeDelayRoutine == null)
+                TimeDelayRoutine = StartCoroutine(TimeDelay());
         }
 
 
