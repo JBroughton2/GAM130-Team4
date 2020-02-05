@@ -11,16 +11,16 @@ public class InteractablePassive : Interactable
         base.Start();
     }
 
-    public override void OnPlayerHighlight()
+    protected override void OnHighlight()
     {
-        base.OnPlayerHighlight();
+        base.OnHighlight();
         
         if(m_debug) Debug.Log("highlight");        
     }
 
-    public override void OnPlayerUnHighlight()
+    protected override void OnUnHighlight()
     {
-        base.OnPlayerUnHighlight();
+        base.OnUnHighlight();
         
         if(m_debug) Debug.Log("un-highlight");
     }

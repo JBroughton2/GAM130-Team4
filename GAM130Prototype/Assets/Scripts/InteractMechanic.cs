@@ -45,7 +45,7 @@ public class InteractMechanic : MonoBehaviour
 
             if (hit.collider.GetComponent<InteractableButton>() != null)
             {
-                hit.collider.GetComponent<InteractableButton>().buttonClicked = true;
+                //hit.collider.GetComponent<InteractableButton>().buttonClicked = true;
                 uiInteract.SetActive(true);
                 //viewMod.SetTrigger("Push");
 

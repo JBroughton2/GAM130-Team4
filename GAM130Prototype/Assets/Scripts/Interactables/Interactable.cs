@@ -6,6 +6,10 @@ public class Interactable : MonoBehaviour
 {
     Outline m_outline = null;
 
+    //player controller
+    protected static Animator m_playerAnimator = null;
+    public static void setPlayerAnimator(Animator animator) { m_playerAnimator = animator; }
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -19,13 +23,22 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public virtual void OnPlayerHighlight()    
-    {        
+    bool m_isHighlighted = false;
+    public void OnPlayerHighlight()    
+    {
+        m_isHighlighted = true;
+        OnHighlight();
+    }
+    protected virtual void OnHighlight() {
         if (m_outline != null) m_outline.enabled = true;
     }
 
-    public virtual void OnPlayerUnHighlight()
+    public void OnPlayerUnHighlight()
     {
+        m_isHighlighted = false;
+        OnUnHighlight();
+    }
+    protected virtual void OnUnHighlight() {        
         if (m_outline != null) m_outline.enabled = false;
     }
 

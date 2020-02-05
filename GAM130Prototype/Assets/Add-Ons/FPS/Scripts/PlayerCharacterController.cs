@@ -9,6 +9,8 @@ public class PlayerCharacterController : MonoBehaviour
     public Camera playerCamera;
     [Tooltip("Audio source for footsteps, jump, etc...")]
     public AudioSource audioSource;
+    [Tooltip("Animator used for view model")]
+    public Animator viewModel;
 
     [Header("General")]
     [Tooltip("Force applied downward when in the air")]
@@ -143,6 +145,9 @@ public class PlayerCharacterController : MonoBehaviour
         // force the crouch state to false when starting
         SetCrouchingState(false, true);
         UpdateCharacterHeight(true);
+
+        // send viewmodel reference to Interactables
+        Interactable.setPlayerAnimator(viewModel);
     }
 
     void Update()
@@ -157,10 +162,18 @@ public class PlayerCharacterController : MonoBehaviour
 
         bool wasGrounded = isGrounded;
         GroundCheck();
+        if(!isGrounded && wasGrounded) {
+            //View model
+            viewModel.SetBool("Grounded", false);
+        }
 
         // landing
         if (isGrounded && !wasGrounded)
         {
+            //View model
+            viewModel.SetBool("Grounded", true);
+            viewModel.ResetTrigger("Jump");
+
             // Fall damage
             float fallSpeed = -Mathf.Min(characterVelocity.y, m_LatestImpactSpeed.y);
             float fallSpeedRatio = (fallSpeed - minSpeedForFallDamage) / (maxSpeedForFallDamage - minSpeedForFallDamage);
@@ -264,7 +277,15 @@ public class PlayerCharacterController : MonoBehaviour
             float speedModifier = isSprinting ? sprintSpeedModifier : 1f;
 
             // converts move input to a worldspace vector based on our character's transform orientation
-            Vector3 worldspaceMoveInput = transform.TransformVector(m_InputHandler.GetMoveInput());
+            Vector3 moveInput = m_InputHandler.GetMoveInput();
+            Vector3 worldspaceMoveInput = transform.TransformVector(moveInput);
+            //View model Move
+            if(moveInput == Vector3.zero) {
+                viewModel.SetBool("Moving", false);
+            }
+            else {
+                viewModel.SetBool("Moving", true);
+            }
 
             // handle grounded movement
             if (isGrounded)
@@ -301,6 +322,10 @@ public class PlayerCharacterController : MonoBehaviour
                         // Force grounding to false
                         isGrounded = false;
                         m_GroundNormal = Vector3.up;
+
+                        //View model jump
+                        viewModel.SetTrigger("Jump");
+                        viewModel.SetBool("Grounded", false);
                     }
                 }
 
