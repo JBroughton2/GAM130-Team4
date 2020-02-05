@@ -9,6 +9,6 @@ public class ButtonTest : MonoBehaviour
     public Vector3 m_spawnPoint = Vector3.zero;
 
     public void spawnObject() {
-        LeanPool.Spawn(m_spawnObject);
+        LeanPool.Spawn(m_spawnObject, m_spawnPoint, Quaternion.identity);
     }
 }

@@ -18,7 +18,7 @@ public class InteractableButton : Interactable
         if (m_interactionCount >= m_maxInteractions) {
             m_canHighlight = !m_disableHighlightOnMax;
         }
-        if (m_disableHighlightOnInteract) {
+        if (m_disableHighlightOnInteract && m_isHighlighted) {
             OnHighlight();
         }
     }
@@ -55,6 +55,9 @@ public class InteractableButton : Interactable
 
         if (m_canInteract)
         {
+            //play sound
+            if(m_soundScheme != null) playSound(m_soundScheme.m_interactSound);
+
             m_canInteract = false;
             m_interactionCount++;
             if (m_disableHighlightOnInteract) {
@@ -73,7 +76,7 @@ public class InteractableButton : Interactable
 
             //check if action limit has been reached
             if(m_maxActions > 0) {
-                if (m_interactionCount >= m_maxActions) StartCoroutine(doAction());
+                if (m_interactionCount <= m_maxActions) StartCoroutine(doAction());
             }
             else StartCoroutine(doAction());
 
@@ -84,8 +87,7 @@ public class InteractableButton : Interactable
             if (m_playerAnimator != null) m_playerAnimator.SetTrigger("Push");
         }
     }
-
-    bool m_canHighlight = true;
+    
     protected override void OnHighlight() {
         if (m_canHighlight) {
             base.OnHighlight();
