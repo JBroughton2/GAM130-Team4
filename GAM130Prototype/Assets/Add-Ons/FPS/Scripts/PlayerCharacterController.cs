@@ -458,4 +458,23 @@ public class PlayerCharacterController : MonoBehaviour
         isCrouching = crouched;
         return true;
     }
+
+    Vector3 m_teleport = Vector3.zero;
+    bool m_doTeleport = false;
+    // fade screen and move to a new position (not safe with collisions)
+    public void Teleport(Vector3 position) {
+        //TODO : implement screen fade
+        m_doTeleport = true;
+        m_teleport = position;
+    }
+
+    private void LateUpdate() {
+        if (m_doTeleport) {
+            transform.position = m_teleport;
+            //m_Controller.Move(-m_Controller.velocity);
+            m_doTeleport = false;
+            
+            //TODO: set velocity to zero
+        }
+    }
 }
