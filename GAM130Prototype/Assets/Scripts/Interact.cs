@@ -7,6 +7,7 @@ public class Interact : MonoBehaviour
     public float m_reach = 5f;
 
     Interactable m_curInteractable = null;
+    InteractablePickUp m_curPickup = null;
 
     PlayerInputHandler m_InputHandler;
 
@@ -44,7 +45,17 @@ public class Interact : MonoBehaviour
 
         if(m_curInteractable != null && m_InputHandler.GetInteractInputDown())
         {
-            m_curInteractable.OnPlayerInteract();
+            if(m_curPickup == null)
+            {
+                m_curInteractable.OnPlayerInteract();
+                m_curPickup = m_curInteractable.gameObject.GetComponent<InteractablePickUp>();                
+            }
+            else
+            {
+                m_curPickup.drop();
+                m_curPickup = null;
+            }
+            
         }
     }
 }
