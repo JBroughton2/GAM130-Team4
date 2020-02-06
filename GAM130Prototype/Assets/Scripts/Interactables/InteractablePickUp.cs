@@ -34,6 +34,7 @@ public class InteractablePickUp : Interactable
         if ((Input.GetKeyDown(KeyCode.E)) && m_canPickup)
         {
             m_canPickup = false;
+
             Debug.Log("PickedUp");
         }
     }
