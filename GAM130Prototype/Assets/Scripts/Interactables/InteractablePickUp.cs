@@ -8,10 +8,12 @@ public class InteractablePickUp : Interactable
     public bool m_canPickup = true;
     [SerializeField]
     private Transform pickUpPos;
+    private Rigidbody rb;
 
     void Start()
     {
         base.Start();
+        rb = GetComponent<Rigidbody>();
     }
 
     protected override void OnHighlight()
@@ -37,6 +39,8 @@ public class InteractablePickUp : Interactable
         {
             m_canPickup = false;
             transform.position = pickUpPos.position;
+            this.transform.SetParent(pickUpPos);
+            rb.isKinematic = true;
             Debug.Log(pickUpPos.position);
             Debug.Log("PickedUp");
         }
@@ -45,6 +49,8 @@ public class InteractablePickUp : Interactable
     public void drop()
     {
         m_canPickup = true;
+        rb.isKinematic = false;
+        this.transform.SetParent(null);
         Debug.Log("Dropping");
     }
 
