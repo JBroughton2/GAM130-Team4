@@ -6,6 +6,8 @@ public class InteractablePickUp : Interactable
 {
     public bool m_debug = false;
     public bool m_canPickup = true;
+    [SerializeField]
+    private Transform pickUpPos;
 
     void Start()
     {
@@ -34,7 +36,8 @@ public class InteractablePickUp : Interactable
         if ((Input.GetKeyDown(KeyCode.E)) && m_canPickup)
         {
             m_canPickup = false;
-
+            transform.position = pickUpPos.position;
+            Debug.Log(pickUpPos.position);
             Debug.Log("PickedUp");
         }
     }
@@ -44,4 +47,5 @@ public class InteractablePickUp : Interactable
         m_canPickup = true;
         Debug.Log("Dropping");
     }
+
 }
