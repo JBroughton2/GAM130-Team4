@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.27450982}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 858660899}
   - component: {fileID: 858660898}
   - component: {fileID: 858660900}
+  - component: {fileID: 858660901}
   m_Layer: 0
   m_Name: UIBehaviour
   m_TagString: Untagged
@@ -622,6 +623,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon1Object: {fileID: 865526464}
   displayAmount: 30
+--- !u!114 &858660901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858660897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5273b32fb3263714fa692ef123cec8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redCardFound: 0
+  greenCardFound: 1
+  Greencard: {fileID: 88235239}
+  Redcard: {fileID: 1203234798}
 --- !u!1 &860060082
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.27450982}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
