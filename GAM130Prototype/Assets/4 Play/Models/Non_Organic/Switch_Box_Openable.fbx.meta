@@ -3,24 +3,26 @@ guid: 5d872806415e3fe49b8dd351206aba4f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: pCube28
-    100002: pCube34
-    100004: pCube36
-    100006: //RootNode
-    400000: pCube28
-    400002: pCube34
-    400004: pCube36
-    400006: //RootNode
-    2100000: lambert1
-    2300000: pCube28
-    2300002: pCube34
-    2300004: pCube36
-    3300000: pCube28
-    3300002: pCube34
-    3300004: pCube36
-    4300000: pCube34
-    4300002: pCube36
-    4300004: pCube28
+    100000: Lever
+    100002: Lever_Box
+    100004: Lever_Box 1
+    100006: Lever_Box_Door
+    100008: //RootNode
+    400000: Lever
+    400002: Lever_Box
+    400004: Lever_Box 1
+    400006: Lever_Box_Door
+    400008: //RootNode
+    2100000: blinn2
+    2300000: Lever
+    2300002: Lever_Box 1
+    2300004: Lever_Box_Door
+    3300000: Lever
+    3300002: Lever_Box 1
+    3300004: Lever_Box_Door
+    4300000: Lever_Box_Door
+    4300002: Lever_Box
+    4300004: Lever
   externalObjects: {}
   materials:
     importMaterials: 1
