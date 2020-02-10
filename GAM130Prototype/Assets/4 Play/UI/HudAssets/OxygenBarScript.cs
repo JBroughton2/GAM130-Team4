@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class OxygenBarScript : MonoBehaviour
 {
+    public Toggle toggleUI;
     bool decreasing = true;
     public float maxOxygen = 100;
     private float oxygen = (float)100;
@@ -30,6 +31,12 @@ public class OxygenBarScript : MonoBehaviour
         TimeDelayRoutine = null;
     }
 
+    public void toggleDecreasing() 
+    {
+        decreasing = toggleUI.isOn;
+        Debug.Log(toggleUI.isOn);
+    }
+
     private void addOxygen() 
     {
         if (oxygen + addAmount > maxOxygen)
@@ -42,7 +49,7 @@ public class OxygenBarScript : MonoBehaviour
     private void Update()
     {
         
-        if ((oxygen > 0) && (decreasing = true))
+        if ((oxygen > 0) && (decreasing == true))
         {
             oxygen = oxygen - Ammount_Decrease * Time.deltaTime;
 
@@ -51,7 +58,15 @@ public class OxygenBarScript : MonoBehaviour
             if (TimeDelayRoutine == null)
                 TimeDelayRoutine = StartCoroutine(TimeDelay());
         }
+        if ((oxygen < maxOxygen) && (decreasing == false)) 
+        {
+            oxygen = oxygen + Ammount_Decrease * 3 * Time.deltaTime;
 
+            fillBar.fillAmount = oxygen / maxOxygen;
 
+            if (TimeDelayRoutine == null)
+                TimeDelayRoutine = StartCoroutine(TimeDelay());
+
+        }
     }
 }
