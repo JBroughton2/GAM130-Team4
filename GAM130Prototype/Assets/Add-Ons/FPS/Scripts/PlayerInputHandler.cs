@@ -53,6 +53,36 @@ public class PlayerInputHandler : MonoBehaviour
         return Vector3.zero;
     }
 
+    public Vector3 GetMoveInputVertical()
+    {
+        if (CanProcessInput())
+        {
+            Vector3 move = new Vector3(0f, 0f, Input.GetAxisRaw(GameConstants.k_AxisNameVertical));
+
+            // constrain move input to a maximum magnitude of 1, otherwise diagonal movement might exceed the max move speed defined
+            move = Vector3.ClampMagnitude(move, 1);
+
+            return move;
+        }
+
+        return Vector3.zero;
+    }
+
+    public Vector3 GetMoveInputHorizontal()
+    {
+        if (CanProcessInput())
+        {
+            Vector3 move = new Vector3(Input.GetAxisRaw(GameConstants.k_AxisNameHorizontal), 0f, 0f);
+
+            // constrain move input to a maximum magnitude of 1, otherwise diagonal movement might exceed the max move speed defined
+            move = Vector3.ClampMagnitude(move, 1);
+
+            return move;
+        }
+
+        return Vector3.zero;
+    }
+
     public float GetLookInputsHorizontal()
     {
         return GetMouseOrStickLookAxis(GameConstants.k_MouseAxisNameHorizontal, GameConstants.k_AxisNameJoystickLookHorizontal);

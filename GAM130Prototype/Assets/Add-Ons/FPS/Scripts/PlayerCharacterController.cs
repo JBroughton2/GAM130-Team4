@@ -36,6 +36,8 @@ public class PlayerCharacterController : MonoBehaviour
     public float sprintSpeedModifier = 2f;
     [Tooltip("Height at which the player dies instantly when falling off the map")]
     public float killHeight = -50f;
+    [Tooltip("Rate at which air strafe movement drops off")]
+    public float m_airStrafeDecel = 5f;
 
     [Header("Rotation")]
     [Tooltip("Rotation speed for moving the camera")]
@@ -46,11 +48,17 @@ public class PlayerCharacterController : MonoBehaviour
 
     [Header("Jump")]
     [Tooltip("Force applied upward when jumping")]
-    public float jumpForce = 9f;
+    public float m_jumpForce = 9f;
+    [Tooltip("Time after jump start during which holding jump button will continue to affect movement")]
+    public float m_jumpSustainUp = 0.5f;
+    [Tooltip("Time after jump start during which holding forward button will continue to affect movement")]
+    public float m_jumpSustainForward = 0.5f;
 
     [Header("Stance")]
     [Tooltip("Ratio (0-1) of the character height where the camera will be at")]
     public float cameraHeightRatio = 0.9f;
+    [Tooltip("Extra camera position offset")]
+    public Vector3 m_cameraOffset = Vector3.zero;
     [Tooltip("Height of character when standing")]
     public float capsuleHeightStanding = 1.8f;
     [Tooltip("Height of character when crouching")]
@@ -310,7 +318,7 @@ public class PlayerCharacterController : MonoBehaviour
                         characterVelocity = new Vector3(characterVelocity.x, 0f, characterVelocity.z);
 
                         // then, add the jumpSpeed value upwards
-                        characterVelocity += Vector3.up * jumpForce;
+                        characterVelocity += Vector3.up * m_jumpForce;
 
                         // play sound
                         audioSource.PlayOneShot(jumpSFX);
@@ -343,13 +351,24 @@ public class PlayerCharacterController : MonoBehaviour
             // handle air movement
             else
             {
-                // add air acceleration
+                Vector3 moveInputVertical = m_InputHandler.GetMoveInputVertical();
+                Vector3 worldspaceMoveInputVertical = transform.TransformVector(moveInputVertical);
+                if (m_InputHandler.GetJumpInputHeld() && Time.time - m_LastTimeJumped < m_jumpSustainUp)
+                {
+                    characterVelocity += Vector3.up * m_jumpForce * Time.deltaTime;
+                }
+                if (m_InputHandler.GetMoveInputVertical().z > 0f && Time.time - m_LastTimeJumped < m_jumpSustainForward)
+                {
+                    // add air acceleration
+                    //characterVelocity += worldspaceMoveInputVertical * accelerationSpeedInAir * Time.deltaTime;
+                }
                 characterVelocity += worldspaceMoveInput * accelerationSpeedInAir * Time.deltaTime;
 
                 // limit air speed to a maximum, but only horizontally
                 float verticalVelocity = characterVelocity.y;
                 Vector3 horizontalVelocity = Vector3.ProjectOnPlane(characterVelocity, Vector3.up);
                 horizontalVelocity = Vector3.ClampMagnitude(horizontalVelocity, maxSpeedInAir * speedModifier);
+                if (moveInput == Vector3.zero) horizontalVelocity = Vector3.Lerp(horizontalVelocity, Vector3.zero, m_airStrafeDecel * Time.deltaTime);
                 characterVelocity = horizontalVelocity + (Vector3.up * verticalVelocity);
 
                 // apply the gravity to the velocity
@@ -400,12 +419,14 @@ public class PlayerCharacterController : MonoBehaviour
 
     void UpdateCharacterHeight(bool force)
     {
+        //TODO: Fix camera clipping inside objects due to extra offset putting it outside of player collision box
+
         // Update height instantly
         if (force)
         {
             m_Controller.height = m_TargetCharacterHeight;
             m_Controller.center = Vector3.up * m_Controller.height * 0.5f;
-            playerCamera.transform.localPosition = Vector3.up * m_TargetCharacterHeight * cameraHeightRatio;
+            playerCamera.transform.localPosition = m_cameraOffset + Vector3.up * m_TargetCharacterHeight * cameraHeightRatio;
             m_Actor.aimPoint.transform.localPosition = m_Controller.center;
         }
         // Update smooth height
@@ -414,7 +435,7 @@ public class PlayerCharacterController : MonoBehaviour
             // resize the capsule and adjust camera position
             m_Controller.height = Mathf.Lerp(m_Controller.height, m_TargetCharacterHeight, crouchingSharpness * Time.deltaTime);
             m_Controller.center = Vector3.up * m_Controller.height * 0.5f;
-            playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition, Vector3.up * m_TargetCharacterHeight * cameraHeightRatio, crouchingSharpness * Time.deltaTime);
+            playerCamera.transform.localPosition = m_cameraOffset + Vector3.Lerp(playerCamera.transform.localPosition, Vector3.up * m_TargetCharacterHeight * cameraHeightRatio, crouchingSharpness * Time.deltaTime);
             m_Actor.aimPoint.transform.localPosition = m_Controller.center;
         }
     }

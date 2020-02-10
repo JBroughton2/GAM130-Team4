@@ -10,20 +10,17 @@
 		Cull Back
 
 		SubShader{
-			Tags{ "RenderType" = "Opaque" "ForceNoShadowCasting" = "True" "Queue" = "Geometry" }
-
-			Stencil
-			{
-				Ref 1
-				Comp Never
-				Fail Replace
-			}
+			Tags{ "RenderType" = "Transparent" "ForceNoShadowCasting" = "True" "Queue" = "Geometry" }
+			
 
 			Pass{
-				SetTexture[_MainTex]{
-					constantColor[_Color]
-					Combine texture * constant, texture * constant
-				}
+				Stencil
+				{
+					Ref 1
+					Comp Never
+					Fail Replace
+					ZFail Zero
+				}			
 			}
 		}
 	}
