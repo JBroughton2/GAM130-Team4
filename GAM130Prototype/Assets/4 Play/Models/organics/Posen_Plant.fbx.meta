@@ -1,16 +1,21 @@
 fileFormatVersion: 2
-guid: 28ac59ef2273920408189b7869b435fe
+guid: 6cf12c176b4e0ef4babee28357bb904c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Corridor_Windows
-    100002: //RootNode
-    400000: Corridor_Windows
-    400002: //RootNode
-    2100000: blinn6
-    2300000: Corridor_Windows
-    3300000: Corridor_Windows
-    4300000: Corridor_Windows
+    100000: polySurface15
+    100002: polySurface18
+    100004: //RootNode
+    400000: polySurface15
+    400002: polySurface18
+    400004: //RootNode
+    2100000: blinn2
+    2300000: polySurface15
+    2300002: polySurface18
+    3300000: polySurface15
+    3300002: polySurface18
+    4300000: polySurface15
+    4300002: polySurface18
   externalObjects: {}
   materials:
     importMaterials: 1

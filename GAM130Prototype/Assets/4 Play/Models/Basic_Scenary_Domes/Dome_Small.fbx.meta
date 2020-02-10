@@ -3,15 +3,14 @@ guid: c625a3bef247c8844bc76a44e44f20b5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Dome_Small
-    100002: //RootNode
-    400000: Dome_Small
-    400002: //RootNode
-    2100000: lambert1
-    2100002: blinn1
-    2300000: Dome_Small
-    3300000: Dome_Small
-    4300000: Dome_Small
+    100000: //RootNode
+    100002: Dome_Small_Open
+    400000: //RootNode
+    400002: Dome_Small_Open
+    2100000: blinn6
+    2300000: Dome_Small_Open
+    3300000: Dome_Small_Open
+    4300000: Dome_Small_Open
   externalObjects: {}
   materials:
     importMaterials: 1

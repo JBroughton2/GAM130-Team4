@@ -3,22 +3,12 @@ guid: 44a745940ee55a04b9765e35e93e8c4b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Bubble_Steel_Large1
-    100002: Large_Dome_Clopsed
-    100004: //RootNode
-    100006: Large_Dome_Glass1
-    100008: transform1
-    100010: transform2
-    400000: Bubble_Steel_Large1
-    400002: Large_Dome_Clopsed
-    400004: //RootNode
-    400006: Large_Dome_Glass1
-    400008: transform1
-    400010: transform2
-    2100000: lambert1
-    2300000: Large_Dome_Clopsed
-    3300000: Large_Dome_Clopsed
-    4300000: Large_Dome_Clopsed
+    100000: //RootNode
+    400000: //RootNode
+    2100000: blinn7
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Bubble_Steel_Large
   externalObjects: {}
   materials:
     importMaterials: 1

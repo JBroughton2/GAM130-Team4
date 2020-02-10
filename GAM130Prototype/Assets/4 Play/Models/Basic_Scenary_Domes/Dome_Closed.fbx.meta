@@ -3,25 +3,11 @@ guid: 0b08f34840dfb2946a12fda0efd65081
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Bubble_Beam1
-    100002: Bubble_Steel
-    100004: //RootNode
-    100006: Dome_Small
-    100008: Dome_Small_Closed
-    100010: Scenary_Smaller
-    100012: transform1
-    100014: transform2
-    100016: transform3
-    400000: Bubble_Beam1
-    400002: Bubble_Steel
-    400004: //RootNode
-    400006: Dome_Small
-    400008: Dome_Small_Closed
-    400010: Scenary_Smaller
-    400012: transform1
-    400014: transform2
-    400016: transform3
-    2100000: lambert1
+    100000: //RootNode
+    100002: Dome_Small_Closed
+    400000: //RootNode
+    400002: Dome_Small_Closed
+    2100000: blinn6
     2300000: Dome_Small_Closed
     3300000: Dome_Small_Closed
     4300000: Dome_Small_Closed
