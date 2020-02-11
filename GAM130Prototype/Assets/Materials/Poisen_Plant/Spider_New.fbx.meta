@@ -1,21 +1,16 @@
 fileFormatVersion: 2
-guid: e1391b8cd4b6da841a91b5371c97d6ab
+guid: 2a88bb8b1f4d49745aa0e9a43c22f0fd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: polySurface15
-    100002: polySurface18
-    100004: //RootNode
-    400000: polySurface15
-    400002: polySurface18
-    400004: //RootNode
+    100000: pasted__Spider_Monster
+    100002: //RootNode
+    400000: pasted__Spider_Monster
+    400002: //RootNode
     2100000: blinn2
-    2300000: polySurface15
-    2300002: polySurface18
-    3300000: polySurface15
-    3300002: polySurface18
-    4300000: polySurface15
-    4300002: polySurface18
+    2300000: pasted__Spider_Monster
+    3300000: pasted__Spider_Monster
+    4300000: pasted__Spider_Monster
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -47,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
