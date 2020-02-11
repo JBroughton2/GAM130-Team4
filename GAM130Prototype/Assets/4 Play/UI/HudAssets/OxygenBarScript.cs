@@ -11,7 +11,7 @@ public class OxygenBarScript : MonoBehaviour
     private float oxygen = (float)100;
     [Range(0.1f, 100)]
     public float Ammount_Decrease = (float)1;
-    public float nothingDelayTime = 0.1f;
+    public float DelayTime = 0.1f;
     public Image fillBar;
     [Range(1,100)]
     public int addAmount = 30;
@@ -26,7 +26,7 @@ public class OxygenBarScript : MonoBehaviour
     private IEnumerator TimeDelay() 
     {
         //Debug.Log("Before");
-        yield return new WaitForSeconds(nothingDelayTime);
+        yield return new WaitForSeconds(DelayTime);
         //Debug.Log("After");
         TimeDelayRoutine = null;
     }
