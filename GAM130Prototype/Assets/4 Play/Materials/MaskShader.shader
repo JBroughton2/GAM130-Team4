@@ -17,10 +17,24 @@
 				Stencil
 				{
 					Ref 1
-					Comp Never
-					Fail Replace
+					Comp Always
+					Pass Replace
 					ZFail Zero
-				}			
+				}	
+
+				 CGPROGRAM
+				#pragma vertex vert_img
+				#pragma fragment frag
+				#pragma fragmentoption ARB_precision_hint_fastest 
+				#include "UnityCG.cginc"
+				
+				float4 frag() : COLOR
+				{
+					clip(-1.0);
+
+					return 1.0;
+				}	
+				ENDCG
 			}
 		}
 	}
