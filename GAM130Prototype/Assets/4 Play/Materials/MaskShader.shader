@@ -1,7 +1,6 @@
 ﻿Shader "Custom/MaskShader"
 {    
 	Properties {
-		_Color("Main Color", Color) = (1,1,1,1)
 		_MainTex("Base (RGB)", 2D) = "white" {}
 	}
 	Category{
@@ -10,7 +9,7 @@
 		Cull Back
 
 		SubShader{
-			Tags{ "RenderType" = "Transparent" "ForceNoShadowCasting" = "True" "Queue" = "Geometry" }
+			Tags{ "RenderType" = "Opaque" "ForceNoShadowCasting" = "True" "Queue" = "Transparent" }
 			
 
 			Pass{
@@ -21,20 +20,10 @@
 					Pass Replace
 					ZFail Zero
 				}	
-
-				 CGPROGRAM
-				#pragma vertex vert_img
-				#pragma fragment frag
-				#pragma fragmentoption ARB_precision_hint_fastest 
-				#include "UnityCG.cginc"
 				
-				float4 frag() : COLOR
-				{
-					clip(-1.0);
-
-					return 1.0;
-				}	
-				ENDCG
+				Blend Zero One
+				
+				SetTexture[_MainTex] { combine texture }				
 			}
 		}
 	}
