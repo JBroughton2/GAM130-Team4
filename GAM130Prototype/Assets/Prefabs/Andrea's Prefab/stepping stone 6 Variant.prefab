@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100016, guid: e51b676621c17304bbcc4881711fb086, type: 3}
       propertyPath: m_Name
-      value: stepping stone 6
+      value: stepping stone 6 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: e51b676621c17304bbcc4881711fb086, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,5 +67,9 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: e51b676621c17304bbcc4881711fb086, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d6cf9bbf875f464d9b7578b4ae9b3fe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e51b676621c17304bbcc4881711fb086, type: 3}
