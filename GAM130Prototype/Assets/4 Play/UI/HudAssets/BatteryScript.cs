@@ -3,32 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.Events;
 
 
 public class BatteryScript : MonoBehaviour
 {
-    public int batteries = 5;
-    public Text powerLevelText;
+
+    public Text displayText;
     public float decreaseAmmount = 0.1f;
     public bool torchUsed = false;
     public float DelayTime = 0.1f;
     public float displayCharge;
-    public ResourceIcon battIcon;
 
     private bool batteryPickup = false;
+    private int batteries = 5;
     private int fullCharge = 100;
     private float currentCharge = 0;
 
     private Coroutine TimeDelayRoutine;
-    public Action OnBattUpdate;
 
-
-    private void Awake()
-    {
-        OnBattUpdate += (() => UpdateBattDisplay());
-        UpdateBattDisplay();
-    }
 
     private IEnumerator TimeDelay()
     {
@@ -39,17 +31,12 @@ public class BatteryScript : MonoBehaviour
     }
 
 
-    public void UpdateBattDisplay()
-    {
-        battIcon.UpdateValue(batteries);
-    }
-
 
     private void AddBattery() 
     {       
         batteries += 1;
         batteryPickup = false;
-        OnBattUpdate.Invoke();
+        
     } 
 
     private void UsePower() 
@@ -76,7 +63,6 @@ public class BatteryScript : MonoBehaviour
         batteries -= 1;
 
         currentCharge = fullCharge;
-        OnBattUpdate.Invoke();
     }
     
     
@@ -88,11 +74,11 @@ public class BatteryScript : MonoBehaviour
         
         UsePower();
 
-        //Debug.Log(currentCharge);
+        Debug.Log(currentCharge);
         // need to display battery percentage in the text next to lightning bolt rounding within 5%? or to full number
 
         //displayText.text = varname+"%";
         displayCharge = currentCharge / fullCharge * 100;
-        powerLevelText.text = Math.Round(displayCharge, 2) +"%";
+        displayText.text = Math.Round(displayCharge, 2) +"%";
     }
 }
