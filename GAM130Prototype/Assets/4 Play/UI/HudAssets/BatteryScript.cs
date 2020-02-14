@@ -3,24 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.Events;
 
 
 public class BatteryScript : MonoBehaviour
 {
-
-    public Text displayText;
+    public int batteries = 5;
+    public Text powerLevelText;
     public float decreaseAmmount = 0.1f;
     public bool torchUsed = false;
     public float DelayTime = 0.1f;
     public float displayCharge;
+    public ResourceIcon battIcon;
 
     private bool batteryPickup = false;
-    private int batteries = 5;
     private int fullCharge = 100;
     private float currentCharge = 0;
 
     private Coroutine TimeDelayRoutine;
+    public Action OnBattUpdate;
 
+
+    private void Awake()
+    {
+        OnBattUpdate += (() => UpdateBattDisplay());
+        UpdateBattDisplay();
+    }
 
     private IEnumerator TimeDelay()
     {
@@ -31,27 +39,32 @@ public class BatteryScript : MonoBehaviour
     }
 
 
+    public void UpdateBattDisplay()
+    {
+        battIcon.UpdateValue(batteries);
+    }
 
-    private void AddBattery() 
-    {       
+
+    private void AddBattery()
+    {
         batteries += 1;
         batteryPickup = false;
-        
-    } 
+        OnBattUpdate.Invoke();
+    }
 
-    private void UsePower() 
+    private void UsePower()
     {
         if (torchUsed)
-        { 
+        {
 
             if (currentCharge <= 0)
             {
-                ChangeBattery(); 
+                ChangeBattery();
             }
 
             else
             {
-                currentCharge = currentCharge - decreaseAmmount * Time.deltaTime ;
+                currentCharge = currentCharge - decreaseAmmount * Time.deltaTime;
                 if (TimeDelayRoutine == null)
                     TimeDelayRoutine = StartCoroutine(TimeDelay());
             }
@@ -60,25 +73,35 @@ public class BatteryScript : MonoBehaviour
 
     private void ChangeBattery()
     {
-        batteries -= 1;
+        if (batteries == 0)
+        {
+            //stop flashlight
+            Debug.Log("stop flashlight");
+        }
 
+        if (batteries > 0)
+        {
+            batteries -= 1;
+        }
+        
         currentCharge = fullCharge;
+        OnBattUpdate.Invoke();
     }
-    
-    
+
+
 
 
     void Update()
     {
         if (batteryPickup) AddBattery();
-        
+
         UsePower();
 
-        Debug.Log(currentCharge);
+        //Debug.Log(currentCharge);
         // need to display battery percentage in the text next to lightning bolt rounding within 5%? or to full number
 
         //displayText.text = varname+"%";
         displayCharge = currentCharge / fullCharge * 100;
-        displayText.text = Math.Round(displayCharge, 2) +"%";
+        powerLevelText.text = Math.Round(displayCharge, 2) + "%";
     }
 }
