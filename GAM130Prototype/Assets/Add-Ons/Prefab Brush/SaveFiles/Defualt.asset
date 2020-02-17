@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,16 +13,16 @@ MonoBehaviour:
   m_Name: Defualt
   m_EditorClassIdentifier: 
   prefabList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5094146807380873754, guid: 86906297f307dca46a428b25d64abf87, type: 3}
+  - {fileID: 4314047002312695429, guid: 6b77939c36b6c3241af5a49336f70f5c, type: 3}
+  - {fileID: 5957003723300593728, guid: e1604957b1c1d3142b5b29ec4c813579, type: 3}
   paintType: 0
-  brushSize: 1
+  brushSize: 3.07
   minBrushSize: 0.1
-  maxBrushSize: 20
-  paintDeltaDistance: 0.4
-  maxPaintDeltaDistance: 3
-  minPaintDeltaDistance: 0.1
+  maxBrushSize: 5
+  paintDeltaDistance: 4.71
+  maxPaintDeltaDistance: 2.5
+  minPaintDeltaDistance: 5.31
   prefabsPerStroke: 1
   maxprefabsPerStroke: 20
   minprefabsPerStroke: 1
@@ -51,10 +52,10 @@ MonoBehaviour:
   maxYRotation: 0
   minZRotation: 0
   maxZRotation: 0
-  scaleType: 0
+  scaleType: 1
   scaleApplicationType: 0
-  minScale: 1
-  maxScale: 1
+  minScale: 6
+  maxScale: 8
   minXScale: 1
   maxXScale: 1
   minYScale: 1
