@@ -119,7 +119,6 @@ public class Jetpack : MonoBehaviour
             for (int i = 0; i < jetpackVfx.Length; i++)
             {
                 var emissionModulesVFX = jetpackVfx[i].emission;
-                emissionModulesVFX.enabled = false;
             }
 
             // keeps the ratio between 0 and 1
