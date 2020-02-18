@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor.Events;
+using System.Globalization;
 
 
 public class BatteryScript : MonoBehaviour
@@ -19,6 +20,7 @@ public class BatteryScript : MonoBehaviour
     private bool batteryPickup = false;
     private int fullCharge = 100;
     private float currentCharge = 0;
+    private string StrDisplayCharge;
 
     private Coroutine TimeDelayRoutine;
     public Action OnBattUpdate;
@@ -102,6 +104,8 @@ public class BatteryScript : MonoBehaviour
 
         //displayText.text = varname+"%";
         displayCharge = currentCharge / fullCharge * 100;
-        powerLevelText.text = Math.Round(displayCharge, 2) + "%";
+
+        StrDisplayCharge = displayCharge.ToString("0.00", CultureInfo.InvariantCulture);
+        powerLevelText.text = StrDisplayCharge + "%";
     }
 }

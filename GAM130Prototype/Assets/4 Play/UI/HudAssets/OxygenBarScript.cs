@@ -17,6 +17,7 @@ public class OxygenBarScript : MonoBehaviour
     public int addAmount = 30;
 
     private Coroutine TimeDelayRoutine;
+    //private GameObject OxygenBar;
 
     void Awake()
     {
@@ -48,9 +49,15 @@ public class OxygenBarScript : MonoBehaviour
     
     private void Update()
     {
+        //if((oxygen == maxOxygen && decreasing == true))
+        //{
+        //    OxygenBar.SetActive(false);
+        //}
+        
         
         if ((oxygen > 0) && (decreasing == true))
         {
+            //OxygenBar.SetActive(true);
             oxygen = oxygen - Ammount_Decrease * Time.deltaTime;
 
             fillBar.fillAmount = oxygen / maxOxygen;
