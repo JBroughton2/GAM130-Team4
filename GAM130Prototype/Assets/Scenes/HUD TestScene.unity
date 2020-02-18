@@ -588,7 +588,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 109.4, y: -5}
-  m_SizeDelta: {x: 150.6, y: 35}
+  m_SizeDelta: {x: 134.89, y: 35}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &669609317
 CanvasRenderer:
@@ -1494,7 +1494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 42, y: -2.95}
+  m_AnchoredPosition: {x: 20, y: -4.2}
   m_SizeDelta: {x: 100.5, y: 34.100006}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1371532866
@@ -1524,13 +1524,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Battery level
+  m_Text: 100.00%
 --- !u!222 &1371532867
 CanvasRenderer:
   m_ObjectHideFlags: 0
