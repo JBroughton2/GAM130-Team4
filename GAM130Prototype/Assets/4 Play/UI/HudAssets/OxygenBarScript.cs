@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class OxygenBarScript : MonoBehaviour
 {
     public Toggle toggleUI;
-    bool decreasing = true;
+    public bool decreasing = true;
     public float maxOxygen = 100;
     private float oxygen = (float)100;
     [Range(0.1f, 100)]
@@ -30,12 +30,6 @@ public class OxygenBarScript : MonoBehaviour
         yield return new WaitForSeconds(DelayTime);
         //Debug.Log("After");
         TimeDelayRoutine = null;
-    }
-
-    public void toggleDecreasing() 
-    {
-        decreasing = toggleUI.isOn;
-        Debug.Log(toggleUI.isOn);
     }
 
     private void addOxygen() 
