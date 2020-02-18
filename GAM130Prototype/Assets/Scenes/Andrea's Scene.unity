@@ -23533,6 +23533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe4792709741a947aec9e99bd7026b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsInDay: 360
+  currentTime: 0
+  timeMultiplier: 1
 --- !u!1001 &1153384725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38912,6 +38915,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe4792709741a947aec9e99bd7026b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsInDay: 360
+  currentTime: 0
+  timeMultiplier: 1
 --- !u!1001 &1848891730
 PrefabInstance:
   m_ObjectHideFlags: 0
