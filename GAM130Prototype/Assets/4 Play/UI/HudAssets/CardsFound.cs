@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardAlphas : MonoBehaviour
+public class CardsFound : MonoBehaviour
 {
    public bool redCardFound = false;
    public bool greenCardFound = true;
+
+    public GameObject iconsRegion;
     
     [SerializeField]
     private Image Greencard;
@@ -37,8 +39,16 @@ public class CardAlphas : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {     
         checkCardsFound();
-        
+
+        if (redCardFound || greenCardFound)
+        {
+            iconsRegion.SetActive(true);
+        }
+        else
+        {
+            iconsRegion.SetActive(false);
+        }
     }
 }
