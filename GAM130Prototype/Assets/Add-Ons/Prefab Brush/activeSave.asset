@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: activeSave
   m_EditorClassIdentifier: 
   prefabList:
-  - {fileID: 100000, guid: 0c4de038c6af7ec46a6921a19b8e1e07, type: 3}
-  - {fileID: 100000, guid: e5005d5ac7beacb4e878dd43cb77a5d0, type: 3}
+  - {fileID: 4314047002312695429, guid: 6b77939c36b6c3241af5a49336f70f5c, type: 3}
+  - {fileID: 5957003723300593728, guid: e1604957b1c1d3142b5b29ec4c813579, type: 3}
+  - {fileID: 5094146807380873754, guid: 86906297f307dca46a428b25d64abf87, type: 3}
   paintType: 0
-  brushSize: 3.07
+  brushSize: 1
   minBrushSize: 0.1
-  maxBrushSize: 5
-  paintDeltaDistance: 4.71
-  maxPaintDeltaDistance: 2.5
-  minPaintDeltaDistance: 5.31
+  maxBrushSize: 20
+  paintDeltaDistance: 0.4
+  maxPaintDeltaDistance: 3
+  minPaintDeltaDistance: 0.1
   prefabsPerStroke: 1
   maxprefabsPerStroke: 20
   minprefabsPerStroke: 1
@@ -53,8 +54,8 @@ MonoBehaviour:
   maxZRotation: 0
   scaleType: 1
   scaleApplicationType: 0
-  minScale: 0.5
-  maxScale: 1
+  minScale: 1
+  maxScale: 2
   minXScale: 1
   maxXScale: 1
   minYScale: 1
