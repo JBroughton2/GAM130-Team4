@@ -8,7 +8,7 @@ public class LightCycle : MonoBehaviour
 
     void Update()
     {
-        transform.RotateAround(Vector3.zero, Vector3.right, (secondsInDay / 60f) * Time.deltaTime);
+        transform.RotateAround(Vector3.zero, Vector3.right, (60f / secondsInDay) * Time.deltaTime);
         transform.LookAt(Vector3.zero);
     }
 }
