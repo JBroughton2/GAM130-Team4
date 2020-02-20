@@ -56,19 +56,25 @@ public class BatteryScript : MonoBehaviour
 
     private void UsePower()
     {
-        if (torchUsed)
+        if ( batteries == 0  && currentCharge <= 0)
         {
-
-            if (currentCharge <= 0)
+            currentCharge = 0;
+        }
+        else {
+            if (torchUsed)
             {
-                ChangeBattery();
-            }
 
-            else
-            {
-                currentCharge = currentCharge - decreaseAmmount * Time.deltaTime;
-                if (TimeDelayRoutine == null)
-                    TimeDelayRoutine = StartCoroutine(TimeDelay());
+                if (currentCharge <= 0)
+                {
+                    ChangeBattery();
+                }
+
+                else
+                {
+                    currentCharge = currentCharge - decreaseAmmount * Time.deltaTime;
+                    if (TimeDelayRoutine == null)
+                        TimeDelayRoutine = StartCoroutine(TimeDelay());
+                }
             }
         }
     }
