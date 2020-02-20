@@ -33,14 +33,14 @@ public class LilypadSink : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (delayFinished)
+        if (currentPos.y <= startingPos.y && delayFinished)
         {
-            pad.position = startingPos;
-            if(pad.position == startingPos)
-            {
-                delayFinished = false;
-                currentPos = startingPos;
-            }
+            currentPos.y += riseSpeed;
+            pad.position = currentPos;
+        }
+        if(currentPos.y >= startingPos.y)
+        {
+            delayFinished = false;
         }
     }
 
@@ -63,6 +63,7 @@ public class LilypadSink : MonoBehaviour
 
     IEnumerator RiseLilypad()
     {
+        pad.position = currentPos;
         yield return new WaitForSeconds(delay);
         delayFinished = true;
     }

@@ -120,6 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sinkSpeed: 0.005
-  riseSpeed: 1
+  riseSpeed: 0.005
   lilypadRise: 1
   delay: 2
