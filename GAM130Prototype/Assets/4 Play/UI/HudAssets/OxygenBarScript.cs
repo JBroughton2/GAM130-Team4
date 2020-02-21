@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class OxygenBarScript : MonoBehaviour
-{
-    public Toggle toggleUI;
-    bool decreasing = true;
+{   
+    public bool decreasing = true;
     public float maxOxygen = 100;
     private float oxygen = (float)100;
     [Range(0.1f, 100)]
@@ -17,7 +16,7 @@ public class OxygenBarScript : MonoBehaviour
     public int addAmount = 30;
 
     private Coroutine TimeDelayRoutine;
-    //private GameObject OxygenBar;
+    public GameObject OxygenBar;
 
     void Awake()
     {
@@ -32,13 +31,7 @@ public class OxygenBarScript : MonoBehaviour
         TimeDelayRoutine = null;
     }
 
-    public void toggleDecreasing() 
-    {
-        decreasing = toggleUI.isOn;
-        Debug.Log(toggleUI.isOn);
-    }
-
-    private void addOxygen() 
+    public void addOxygen() 
     {
         if (oxygen + addAmount > maxOxygen)
             oxygen = maxOxygen;
@@ -49,15 +42,19 @@ public class OxygenBarScript : MonoBehaviour
     
     private void Update()
     {
-        //if((oxygen == maxOxygen && decreasing == true))
-        //{
-        //    OxygenBar.SetActive(false);
-        //}
-        
-        
+        if ((oxygen >= maxOxygen && decreasing == false))
+        {
+            OxygenBar.SetActive(false);
+        }
+        else
+        {
+            OxygenBar.SetActive(true);
+        }
+
+
         if ((oxygen > 0) && (decreasing == true))
         {
-            //OxygenBar.SetActive(true);
+            
             oxygen = oxygen - Ammount_Decrease * Time.deltaTime;
 
             fillBar.fillAmount = oxygen / maxOxygen;
