@@ -32,6 +32,16 @@ public class SpiderController : MonoBehaviour
         float currentAngularVelocity = Vector3.Angle(currentFacing, lastFacing) / Time.deltaTime; //degrees per second
         lastFacing = currentFacing;
 
-        bool isRotating = currentAngularVelocity > 1f;
+        bool isRotating = currentAngularVelocity > 8f;
+
+        if (isRotating == true)
+        {
+            navMesh.speed = 0.1f;
+        }
+        else
+        {
+            navMesh.speed = 3.5f;
+        }
+
     }
 }

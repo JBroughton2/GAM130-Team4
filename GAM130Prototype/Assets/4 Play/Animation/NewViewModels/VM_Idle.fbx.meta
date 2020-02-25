@@ -655,6 +655,9 @@ ModelImporter:
     101298: Wrist
     101300: Wrist_L
     101302: Wrist_R
+    101304: geo
+    101306: Group
+    101308: polySurface10
     400000: AimSystem
     400002: AlignIKToChest_M
     400004: AlignIKToRoot_M
@@ -1307,8 +1310,14 @@ ModelImporter:
     401298: Wrist
     401300: Wrist_L
     401302: Wrist_R
+    401304: geo
+    401306: Group
+    401308: polySurface10
+    2100000: lambert1
+    4300000: polySurface10
     7400000: Idle
     9500000: //RootNode
+    13700000: polySurface10
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -1336,7 +1345,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -1372,7 +1409,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human: []
@@ -1388,7 +1425,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 0a2b6e89003c7904f8d5686e455e126d,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
