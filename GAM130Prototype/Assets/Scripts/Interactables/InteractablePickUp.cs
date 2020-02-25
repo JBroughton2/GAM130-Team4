@@ -9,7 +9,6 @@ public class InteractablePickUp : Interactable
     [SerializeField]
     private Transform pickUpPos;
     [SerializeField]
-    private float throwForce;
     private Rigidbody rb;
 
     void Start()
@@ -20,10 +19,7 @@ public class InteractablePickUp : Interactable
 
     void Update()
     {
-        if ((Input.GetMouseButtonDown(1) && !m_canPickup))
-        {
-            Throw();
-        }
+
     }
 
     protected override void OnHighlight()
@@ -62,14 +58,6 @@ public class InteractablePickUp : Interactable
         rb.isKinematic = false;
         this.transform.SetParent(null);
         Debug.Log("Dropping");
-    }
-
-    public void Throw()
-    {
-        m_canPickup = true;
-        rb.isKinematic = false;
-        this.transform.SetParent(null);
-        rb.AddForce(transform.forward * throwForce);
     }
 
 }
