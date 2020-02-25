@@ -1,0 +1,303 @@
+fileFormatVersion: 2
+guid: f5ee03d7dc9d6f34c8912ab2fd5f6bee
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ArmGuideL
+    100002: ArmGuideR
+    100004: CollarL
+    100006: CollarR
+    100008: ElbowL
+    100010: ElbowR
+    100012: HandL
+    100014: HandR
+    100016: IF2L
+    100018: IF2R
+    100020: IF3L
+    100022: IF3R
+    100024: IF4L
+    100026: IF4R
+    100028: IndexFingerL
+    100030: IndexFingerR
+    100032: locator1
+    100034: MF2L
+    100036: MF2R
+    100038: MF3L
+    100040: MF3R
+    100042: MF4L
+    100044: MF4R
+    100046: MiddleFingerL
+    100048: MiddleFingerR
+    100050: PalmL
+    100052: PalmR
+    100054: pCylinder1
+    100056: PF2L
+    100058: PF2R
+    100060: PF3L
+    100062: PF3R
+    100064: PF4L
+    100066: PF4R
+    100068: PinkyFingerL
+    100070: PinkyFingerR
+    100072: polySurface1
+    100074: polySurface10
+    100076: polySurface12
+    100078: polySurface14
+    100080: polySurface2
+    100082: polySurface3
+    100084: polySurface4
+    100086: polySurface4 1
+    100088: polySurface5
+    100090: polySurface5 1
+    100092: polySurface6
+    100094: polySurface7
+    100096: polySurface7 1
+    100098: polySurface8
+    100100: polySurface8 1
+    100102: polySurface9
+    100104: RF2L
+    100106: RF2R
+    100108: RF3L
+    100110: RF3R
+    100112: RF4L
+    100114: RF4R
+    100116: RingFingerL
+    100118: RingFingerR
+    100120: ShoulderL
+    100122: ShoulderR
+    100124: Thumb2L
+    100126: Thumb2R
+    100128: Thumb3L
+    100130: Thumb3R
+    100132: Thumb4L
+    100134: Thumb4R
+    100136: ThumbL
+    100138: ThumbR
+    100140: transform1
+    100142: transform10
+    100144: transform11
+    100146: transform12
+    100148: transform13
+    100150: transform14
+    100152: transform2
+    100154: transform3
+    100156: transform4
+    100158: transform5
+    100160: transform6
+    100162: transform7
+    100164: transform8
+    100166: transform9
+    100168: //RootNode
+    100170: WristL
+    100172: WristR
+    400000: ArmGuideL
+    400002: ArmGuideR
+    400004: CollarL
+    400006: CollarR
+    400008: ElbowL
+    400010: ElbowR
+    400012: HandL
+    400014: HandR
+    400016: IF2L
+    400018: IF2R
+    400020: IF3L
+    400022: IF3R
+    400024: IF4L
+    400026: IF4R
+    400028: IndexFingerL
+    400030: IndexFingerR
+    400032: locator1
+    400034: MF2L
+    400036: MF2R
+    400038: MF3L
+    400040: MF3R
+    400042: MF4L
+    400044: MF4R
+    400046: MiddleFingerL
+    400048: MiddleFingerR
+    400050: PalmL
+    400052: PalmR
+    400054: pCylinder1
+    400056: PF2L
+    400058: PF2R
+    400060: PF3L
+    400062: PF3R
+    400064: PF4L
+    400066: PF4R
+    400068: PinkyFingerL
+    400070: PinkyFingerR
+    400072: polySurface1
+    400074: polySurface10
+    400076: polySurface12
+    400078: polySurface14
+    400080: polySurface2
+    400082: polySurface3
+    400084: polySurface4
+    400086: polySurface4 1
+    400088: polySurface5
+    400090: polySurface5 1
+    400092: polySurface6
+    400094: polySurface7
+    400096: polySurface7 1
+    400098: polySurface8
+    400100: polySurface8 1
+    400102: polySurface9
+    400104: RF2L
+    400106: RF2R
+    400108: RF3L
+    400110: RF3R
+    400112: RF4L
+    400114: RF4R
+    400116: RingFingerL
+    400118: RingFingerR
+    400120: ShoulderL
+    400122: ShoulderR
+    400124: Thumb2L
+    400126: Thumb2R
+    400128: Thumb3L
+    400130: Thumb3R
+    400132: Thumb4L
+    400134: Thumb4R
+    400136: ThumbL
+    400138: ThumbR
+    400140: transform1
+    400142: transform10
+    400144: transform11
+    400146: transform12
+    400148: transform13
+    400150: transform14
+    400152: transform2
+    400154: transform3
+    400156: transform4
+    400158: transform5
+    400160: transform6
+    400162: transform7
+    400164: transform8
+    400166: transform9
+    400168: //RootNode
+    400170: WristL
+    400172: WristR
+    2100000: lambert1
+    2300000: polySurface9
+    3300000: polySurface9
+    4300000: polySurface10
+    4300002: polySurface14
+    4300004: polySurface9
+    7400000: Falling
+    9500000: //RootNode
+    13700000: polySurface10
+    13700002: polySurface14
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Falling
+      takeName: Falling
+      firstFrame: 332
+      lastFrame: 338
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
