@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cactus
+  - Enemy
   layers:
   - Default
   - TransparentFX
