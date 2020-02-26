@@ -933,9 +933,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpIdle
       objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000023134499
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.012740996
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0061264466
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.73106134
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000010239969
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.012740996
+      objectReference: {fileID: 0}
     - target: {fileID: 400138, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 191.8
       objectReference: {fileID: 0}
     - target: {fileID: 400138, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
       propertyPath: m_LocalPosition.y
@@ -963,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400138, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400138, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -980,7 +1004,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 768d0200077a0944fbd00d934e63bf37, type: 2}
+      objectReference: {fileID: 9100000, guid: 4824eaf8f1575be47be6e628fbe71d90, type: 2}
     - target: {fileID: 9500000, guid: 9c7bda4c529651f4e873369a54699461, type: 3}
       propertyPath: m_Enabled
       value: 1
