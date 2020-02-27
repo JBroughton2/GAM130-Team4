@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21cb495ffbca0404d878640680165899, type: 3}
   m_Name: activeSave
   m_EditorClassIdentifier: 
-  prefabList: []
+  prefabList:
+  - {fileID: 100000, guid: 24f6e2bcc1935fb429460d41c8f5f34f, type: 3}
   paintType: 0
-  brushSize: 1
+  brushSize: 0.9
   minBrushSize: 0.1
   maxBrushSize: 20
-  paintDeltaDistance: 0.4
+  paintDeltaDistance: 0.68
   maxPaintDeltaDistance: 3
   minPaintDeltaDistance: 0.1
   prefabsPerStroke: 1
@@ -42,17 +43,17 @@ MonoBehaviour:
   parent: {fileID: 0}
   rotateToMatchSurface: 0
   rotateSurfaceDirection: 0
-  randomizeRotation: 0
+  randomizeRotation: 1
   minXRotation: 0
   maxXRotation: 0
   minYRotation: 0
-  maxYRotation: 0
+  maxYRotation: 360
   minZRotation: 0
   maxZRotation: 0
-  scaleType: 0
+  scaleType: 1
   scaleApplicationType: 0
-  minScale: 1
-  maxScale: 1
+  minScale: 50
+  maxScale: 50
   minXScale: 1
   maxXScale: 1
   minYScale: 1
