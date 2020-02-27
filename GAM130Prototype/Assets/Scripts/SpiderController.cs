@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class SpiderController : MonoBehaviour
@@ -14,13 +15,22 @@ public class SpiderController : MonoBehaviour
     {
         navMesh = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
+
+        StartCoroutine(checkFinishedEmergeAnimation());
+    }
+
+    IEnumerator checkFinishedEmergeAnimation()
+    {
+        while ((!anim.GetCurrentAnimatorStateInfo(0).IsName("DigEmerge"))){
+            yield return new WaitForEndOfFrame();
+        }
+
+        inPLay = true;
     }
 
 
     void Update()
     {
-
-        if(!anim.GetCurrentAnimatorStateInfo(0).IsName("DigEmerge")) inPLay = true;
 
         if (inPLay)
         {
