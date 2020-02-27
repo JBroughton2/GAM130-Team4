@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.053264342, g: 0.060896173, b: 0.15852335, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -361,13 +361,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500519769}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -333, y: 166.3, z: 5.800003}
+  m_LocalRotation: {x: -0.03672718, y: 0.0075514205, z: -0.00072978286, w: 0.99929655}
+  m_LocalPosition: {x: -333.223, y: 164.071, z: 6.371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.209, y: 0.87000006, z: -0.116000004}
 --- !u!114 &500519773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options
+  m_Text: Quit
 --- !u!222 &529083614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -655,9 +655,9 @@ RectTransform:
   m_Father: {fileID: 592257941}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 560, y: -15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604557402
@@ -766,7 +766,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.1882353, g: 0.16470589, b: 0.1254902, a: 1}
+  m_Color: {r: 0.92999274, g: 0.9716981, b: 0.60960305, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -10580,7 +10580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &928792901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10697,9 +10697,9 @@ RectTransform:
   m_Father: {fileID: 592257941}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &952164553
@@ -11134,9 +11134,9 @@ RectTransform:
   m_Father: {fileID: 592257941}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1244156412
@@ -11328,9 +11328,9 @@ RectTransform:
   m_Father: {fileID: 592257941}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345403535
@@ -11617,12 +11617,12 @@ PrefabInstance:
     - target: {fileID: 870327844532181301, guid: 116898e45f60cf045b83a791f398e88c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 108.76
+      value: 108.9
       objectReference: {fileID: 0}
     - target: {fileID: 870327844532181301, guid: 116898e45f60cf045b83a791f398e88c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 870327844532181301, guid: 116898e45f60cf045b83a791f398e88c,
         type: 3}
@@ -11672,12 +11672,12 @@ PrefabInstance:
     - target: {fileID: 870327844532181301, guid: 116898e45f60cf045b83a791f398e88c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0190202
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 870327844532181301, guid: 116898e45f60cf045b83a791f398e88c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2810394
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 870327844532181301, guid: 116898e45f60cf045b83a791f398e88c,
         type: 3}
