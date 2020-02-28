@@ -4,8 +4,10 @@ using UnityEngine.AI;
 
 public class SpiderController : MonoBehaviour
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private Animator anim;
+    [SerializeField] 
+    private Transform target;
+    [SerializeField] 
+    private Animator anim;
     private NavMeshAgent navMesh;
 
     private bool inPLay = false;
