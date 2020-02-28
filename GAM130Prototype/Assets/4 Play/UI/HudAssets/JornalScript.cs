@@ -10,6 +10,22 @@ public class JornalScript : MonoBehaviour
     public Text LogText;
 
 
+
+    void Awake()
+    {
+        jornalCanvas.SetActive(false);
+        hudCanvas.SetActive(true);
+        Cursor.visible = false;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp("j"))
+        {
+            changeHudState();
+        }
+    }
+
     private void changeHudState()
     {
         if (jornalCanvas.activeInHierarchy == true)
@@ -24,17 +40,7 @@ public class JornalScript : MonoBehaviour
             hudCanvas.SetActive(false);
             Cursor.visible = true;
         }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyUp("j"))
-        {
-            changeHudState(); 
-        }
-    }
-
-    
+    }    
 
     public void Log1()
     {
