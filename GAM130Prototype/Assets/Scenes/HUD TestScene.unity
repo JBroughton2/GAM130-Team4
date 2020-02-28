@@ -1191,11 +1191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   batteries: 5
-  powerLevelText: {fileID: 1371532866}
-  decreaseAmmount: 0.5
+  decreaseAmmount: 5
   torchUsed: 0
-  DelayTime: 0.1
   displayCharge: 0
+  powerLevelText: {fileID: 1371532866}
   battIcon: {fileID: 865526465}
 --- !u!4 &858660899
 Transform:
@@ -1223,10 +1222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f54afba4755493459136e04339dc0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decreasing: 1
+  decreasing: 0
   maxOxygen: 100
-  Ammount_Decrease: 1
-  DelayTime: 0.1
+  Ammount_Decrease: 5
   fillBar: {fileID: 743970805}
   addAmount: 30
   barAlpha: 0
@@ -2012,7 +2010,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100.00%
+  m_Text: 100.0%
 --- !u!222 &1371532867
 CanvasRenderer:
   m_ObjectHideFlags: 0

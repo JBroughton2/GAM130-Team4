@@ -16,11 +16,13 @@ public class JornalScript : MonoBehaviour
         {
             jornalCanvas.SetActive(false);
             hudCanvas.SetActive(true);
+            Cursor.visible = false;
         }
         else
         {
             jornalCanvas.SetActive(true);
             hudCanvas.SetActive(false);
+            Cursor.visible = true;
         }
     }
 
