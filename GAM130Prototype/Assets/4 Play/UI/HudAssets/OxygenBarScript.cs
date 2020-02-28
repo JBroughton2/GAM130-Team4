@@ -8,7 +8,7 @@ public class OxygenBarScript : MonoBehaviour
     public bool decreasing = true;
     public float maxOxygen = 100;
     private float oxygen = (float)100;
-    [Range(0.1f, 100)]
+    [Range(5, 30)]
     public float Ammount_Decrease = (float)1;
     public float DelayTime = 0.1f;
     public Image fillBar;
