@@ -3,35 +3,47 @@ using UnityEngine.AI;
 
 public class SpiderController : MonoBehaviour
 {
-    [SerializeField]
-    private Transform target;
-    [SerializeField]
-    private Animator anim;
-
+    [SerializeField] private Transform target;
+    [SerializeField] private Animator anim;
     private NavMeshAgent navMesh;
-    Vector3 lastFacing = Vector3.zero;
 
-
+    private bool inPLay = false;
+    private bool attacking;
+ 
     void Start()
     {
         navMesh = GetComponent<NavMeshAgent>();
-        lastFacing = transform.forward;
+        anim = GetComponentInChildren<Animator>();
     }
+
 
     void Update()
     {
 
-        navMesh.destination = target.position;
+        if(!anim.GetCurrentAnimatorStateInfo(0).IsName("DigEmerge")) inPLay = true;
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (inPLay)
         {
-            anim.SetBool("Moving", true);
+            Vector3 newTargetPostition = new Vector3(target.position.x, this.transform.position.y, target.position.z);
+            navMesh.destination = newTargetPostition;
+            anim.SetBool("WalkForwards", true);
+            if (attacking)
+            {
+                anim.SetBool("Attack", false);
+                attacking = false;
+            }
+
         }
 
-        Vector3 currentFacing = transform.forward;
-        float currentAngularVelocity = Vector3.Angle(currentFacing, lastFacing) / Time.deltaTime; //degrees per second
-        lastFacing = currentFacing;
+    }
 
-        bool isRotating = currentAngularVelocity > 1f;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Triggered");
+            anim.SetBool("Attack", true);
+            attacking = true;
+        }
     }
 }
