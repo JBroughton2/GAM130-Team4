@@ -852,6 +852,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1855983225 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7590017810869986711, guid: 761cdc9e4e883334cbdcea062d0befa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085406129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1864375525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1198,7 +1204,7 @@ PrefabInstance:
         type: 3}
       propertyPath: viewModel
       value: 
-      objectReference: {fileID: 2085406130}
+      objectReference: {fileID: 1855983225}
     - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: sprintSpeedModifier
@@ -1216,12 +1222,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 761cdc9e4e883334cbdcea062d0befa7, type: 3}
---- !u!95 &2085406130 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6992893266272619525, guid: 761cdc9e4e883334cbdcea062d0befa7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2085406129}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &928760582474142448
 Transform:
   m_ObjectHideFlags: 0
