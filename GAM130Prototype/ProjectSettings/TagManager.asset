@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cactus
   - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
