@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class JornalScript : MonoBehaviour
 {
+
+    public GameObject log1;
     public GameObject jornalCanvas;
     public GameObject hudCanvas;
     public Text LogText;
 
+    public bool logFound = false; 
 
 
     void Awake()
@@ -16,6 +19,16 @@ public class JornalScript : MonoBehaviour
         jornalCanvas.SetActive(false);
         hudCanvas.SetActive(true);
         Cursor.visible = false;
+
+        log1.SetActive(false);
+    }
+
+    void updateLogs()
+    {
+        if (logFound = true)
+        {
+            log1.SetActive(true);
+        }
     }
 
     void Update()
@@ -57,7 +70,6 @@ public class JornalScript : MonoBehaviour
             "running but it’s causing our power output to skyrocket- That bulb in the plant lab that’s always starts flickering after it’s been on for a few hours? " +
             "It’s now the brightest bulb in the room. I think it’s making the incubator lights brighter too, the specimens appear to be growing  at a rapid pace; " +
             "I’m worried we’re going to run out of tanks to keep them in. ");
-
     }
 
     public void Log3()
