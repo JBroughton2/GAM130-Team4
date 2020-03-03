@@ -290,9 +290,19 @@ public class PlayerCharacterController : MonoBehaviour
             //View model Move
             if(moveInput == Vector3.zero) {
                 viewModel.SetBool("Moving", false);
+                viewModel.SetBool("Sprint", false);
             }
             else {
                 viewModel.SetBool("Moving", true);
+                if (isSprinting)
+                {
+                    viewModel.SetBool("Sprint", true);
+                }
+                else
+                {
+                    viewModel.SetBool("Sprint", false);
+                }
+
             }
 
             // handle grounded movement
