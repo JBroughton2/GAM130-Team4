@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -29,7 +29,6 @@ public class SpiderController : MonoBehaviour
 
         inPLay = true;
     }
-
 
     void Update()
     {
