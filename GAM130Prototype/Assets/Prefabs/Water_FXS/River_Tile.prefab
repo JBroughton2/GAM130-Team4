@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.37647063, g: 0.5921569, b: 0.5686275, a: 1}
-      maxColor: {r: 0.18823531, g: 0.5137255, b: 0.43137258, a: 1}
+      minColor: {r: 0.20185119, g: 0.52011406, b: 0.6792453, a: 1}
+      maxColor: {r: 0.28635636, g: 0.40261212, b: 0.5188679, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -337,7 +337,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -390,7 +390,7 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -442,9 +442,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
-      minScalar: 0
+      minScalar: 6.283185
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -495,9 +495,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
-      minScalar: 0
+      minScalar: 6.283185
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -548,9 +548,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
-      minScalar: 0
+      minScalar: 6.283185
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -601,8 +601,8 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     maxNumParticles: 1000
-    size3D: 0
-    rotation3D: 0
+    size3D: 1
+    rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
@@ -1593,7 +1593,7 @@ ParticleSystem:
     z:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2.5
       minScalar: 2
       maxCurve:
         serializedVersion: 2
@@ -4675,7 +4675,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0.007
   m_MaxParticleSize: 0.007
@@ -4816,7 +4816,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4869,7 +4869,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 12
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4922,8 +4922,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.38431376, g: 0.6, b: 0.5764706, a: 1}
-      maxColor: {r: 0.20000002, g: 0.5411765, b: 0.44705886, a: 1}
+      minColor: {r: 0.20185119, g: 0.52011406, b: 0.6792453, a: 1}
+      maxColor: {r: 0.28635636, g: 0.40261212, b: 0.5188679, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4985,7 +4985,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5038,7 +5038,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5091,7 +5091,7 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5143,8 +5143,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5196,8 +5196,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5249,8 +5249,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5302,8 +5302,8 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     maxNumParticles: 1000
-    size3D: 0
-    rotation3D: 0
+    size3D: 1
+    rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
@@ -5368,7 +5368,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 0.5, y: 0.5, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -6294,7 +6294,7 @@ ParticleSystem:
     z:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2.5
       minScalar: 2
       maxCurve:
         serializedVersion: 2
@@ -9377,7 +9377,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0.001
   m_MaxParticleSize: 0.06
@@ -9387,7 +9387,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 0
+  m_RenderAlignment: 1
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
@@ -9395,7 +9395,7 @@ ParticleSystemRenderer:
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -12571,11 +12571,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4556162238123463505}
     m_Modifications:
-    - target: {fileID: 8006693344133984830, guid: da9839f8a795fc1409757d141b199a60,
-        type: 3}
-      propertyPath: m_Name
-      value: River_Spray_Large
-      objectReference: {fileID: 0}
     - target: {fileID: 8006693344133984827, guid: da9839f8a795fc1409757d141b199a60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12631,10 +12626,145 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984830, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: m_Name
+      value: River_Spray_Large
+      objectReference: {fileID: 0}
     - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
         type: 3}
       propertyPath: ShapeModule.m_MeshRenderer
       value: 
       objectReference: {fileID: 4556162238123463507}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.size3D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startRotationX.scalar
+      value: 6.283185
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startRotationY.scalar
+      value: 6.283185
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 6.283185
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startRotation.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.28635636
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.40261212
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.20185119
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.52011406
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984824, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984825, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: m_RenderAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006693344133984825, guid: da9839f8a795fc1409757d141b199a60,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da9839f8a795fc1409757d141b199a60, type: 3}
