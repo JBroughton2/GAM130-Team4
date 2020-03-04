@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5348840627638583225}
   - component: {fileID: 5348840627638583226}
-  - component: {fileID: 5348840627638583224}
   - component: {fileID: 5348840627638583227}
   m_Layer: 0
-  m_Name: Spider 1
+  m_Name: PatrollingSpider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5348840627638583204}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 100.18954, y: 8.27, z: 110.6142}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5348840627659424431}
   m_Father: {fileID: 0}
@@ -44,7 +43,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 15
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -56,19 +55,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &5348840627638583224
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5348840627638583204}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 12.781509, y: 7.227272, z: 9.847523}
-  m_Center: {x: 1.1304817, y: 0.6727791, z: -0.20738792}
 --- !u!114 &5348840627638583227
 MonoBehaviour:
   m_ObjectHideFlags: 0
