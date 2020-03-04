@@ -34440,7 +34440,7 @@ PrefabInstance:
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.32
+      value: -71.1
       objectReference: {fileID: 0}
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -34450,7 +34450,7 @@ PrefabInstance:
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 93.8
+      value: 126.85
       objectReference: {fileID: 0}
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -34460,7 +34460,7 @@ PrefabInstance:
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8258553
+      value: 0.98962736
       objectReference: {fileID: 0}
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -34470,7 +34470,7 @@ PrefabInstance:
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5638821
+      value: -0.1436585
       objectReference: {fileID: 0}
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -34485,7 +34485,7 @@ PrefabInstance:
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 111.351006
+      value: 196.519
       objectReference: {fileID: 0}
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -52805,16 +52805,16 @@ Transform:
   - {fileID: 107281493}
   - {fileID: 2126137476}
   - {fileID: 20530807}
-  - {fileID: 385205026}
+  - {fileID: 2080700850}
   - {fileID: 1186831643}
   - {fileID: 52096268}
-  - {fileID: 2080700850}
   - {fileID: 1950298487}
   - {fileID: 282982977}
   - {fileID: 602858072}
   - {fileID: 59221186}
   - {fileID: 1750317918}
   - {fileID: 1818284962}
+  - {fileID: 385205026}
   - {fileID: 1851229126}
   - {fileID: 1938830553}
   - {fileID: 1184004613}
