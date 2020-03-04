@@ -1,96 +1,49 @@
-﻿//using UnityEngine;
-//using UnityEngine.AI;
-//using System.Collections;
-//using System.Collections.Generic;
+﻿using UnityEngine;
+using UnityEngine.AI;
+using System.Collections;
 
+public class SpiderPatrol : MonoBehaviour
+{
+    public Transform[] points;
+    private int destPoint = 0;
+    private NavMeshAgent agent;
+    [SerializeField] private Animator anim;
+    public float moveSpeed;
 
-//public class SpiderPatrol : MonoBehaviour
-//{
-//    public NavMeshAgent agent;
-//    public GameObject spider;
-//    public enum State
-//    {
-//        PATROL,
-//        CHASE
-//    }
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
 
-//    public State state;
-//    private bool alive;
+        agent.autoBraking = false;
+        GotoNextPoint();
+    }
 
-//    // Variables for Patrolling
-//    public GameObject[] waypoints;
-//    private int waypointIndex = 0;
-//    public float patrolSpeed = 0.5f;
+    void GotoNextPoint()
+    {
+        if (points.Length == 0)
+            return;
+        agent.destination = points[destPoint].position;
 
-//    // Variables for Chasing
-//    public float chaseSpeed = 1f;
-//    public GameObject target;
+        destPoint = (destPoint + 1) % points.Length;
 
-//    void Start()
-//    {
-//        agent = GetComponent<NavMeshAgent>();
+        anim.SetBool("WalkForwards", true);
+        moveSpeed = 15;
+    }
 
-//        agent.updatePosition = true;
-//        agent.updateRotation = false;
+    void Update()
+    {
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        {
+            StartCoroutine(PointDelay());
+        }
+    }
 
-//        state = SpiderPatrol.State.PATROL;
-//        alive = true;
+    IEnumerator PointDelay()
+    {
+        yield return new WaitForSeconds(10);
+        GotoNextPoint();
+        Debug.Log("Delaying");
+    }
 
-//        StartCoroutine("FSM");
-//    }
-
-//    IEnumerator FSM()
-//    {
-//        while (alive)
-//        {
-//            switch (state)
-//            {
-//                case State.PATROL:
-//                    Patrol();
-//                    break;
-//                case State.CHASE:
-//                    Chase();
-//                    break;
-//            }
-//            yield return null;
-//        }
-//    }
-
-//    void Patrol()
-//    {
-//        agent.speed = patrolSpeed;
-//        if (Vector3.Distance(this.transform.position, waypoints[waypointIndex].transform.position) >= 2)
-//        {
-//            agent.SetDestination(waypoints[waypointIndex].transform.position);
-//            CharacterController.Move(agent.desiredVelocity, false, false);
-//        }
-//        else if (Vector3.Distance(this.transform.position, waypoints[waypointIndex].transform.position) <= 2)
-//        {
-//            waypointIndex += 1;
-//            if (waypointIndex > waypoints.Length)
-//            {
-//                waypointIndex = 0;
-//            }
-//        }
-//        else
-//        {
-//            spider.Move(Vector3.zero, false, false);
-//        }
-//    }
-
-//    void Chase()
-//    {
-//        agent.speed = chaseSpeed;
-//        agent.SetDestination(target.transform.position);
-//        CharacterController.Move(agent.desiredVelocity, false, false);
-//    }
-
-//    void OnTriggerEnter (Collider coll)
-//    {
-//        if (coll.tag == "Player")
-//        {
-//            state = SpiderController.State.CHASE;
-//            target = coll.gameObject;
-//        }
-//    }
-//}
+}
