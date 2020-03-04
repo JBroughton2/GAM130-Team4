@@ -17,7 +17,9 @@ ModelImporter:
     400010: transform39
     2100000: lambert1
     2300000: pCube12
+    2300002: //RootNode
     3300000: pCube12
+    3300002: //RootNode
     4300000: pCube12
   externalObjects: {}
   materials:
