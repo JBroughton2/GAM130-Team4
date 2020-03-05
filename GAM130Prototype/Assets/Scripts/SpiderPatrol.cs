@@ -5,15 +5,19 @@ using System.Collections;
 public class SpiderPatrol : MonoBehaviour
 {
     public Transform[] points;
-    private int destPoint = 0;
-    private NavMeshAgent agent;
-    [SerializeField] private Animator anim;
     public float moveSpeed;
+
+    private NavMeshAgent agent;
     private Transform target;
 
     private int maxDistance = 10;
     private int minDistance = 5;
-    [SerializeField] private float attackRadius;
+    private int destPoint = 0;
+
+    [SerializeField] 
+    private float attackRadius;
+    [SerializeField] 
+    private Animator anim;
 
     void Start()
     {
@@ -68,7 +72,7 @@ public class SpiderPatrol : MonoBehaviour
         Collider[] nearbyObjects = Physics.OverlapSphere(transform.position, attackRadius);
         foreach (Collider item in nearbyObjects)
         {
-            Debug.Log(item)
+            Debug.Log(item);
 
             if (item.CompareTag("Player"))
             {
