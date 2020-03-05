@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &6120258791120317572
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7534460821922824036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300004, guid: 24322ed825eccb249b86bfee1a51d712, type: 3}
 --- !u!1001 &6123008431918611999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +24,7 @@ PrefabInstance:
     - target: {fileID: 4356814312047919483, guid: 8b2eb9ce2b11c994c89f78157f158f49,
         type: 3}
       propertyPath: m_Name
-      value: Stone_3
+      value: Stone 1
       objectReference: {fileID: 0}
     - target: {fileID: 4356814312047893851, guid: 8b2eb9ce2b11c994c89f78157f158f49,
         type: 3}
@@ -82,5 +96,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4356814312045993913, guid: 8b2eb9ce2b11c994c89f78157f158f49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35fe0b7167cdb944a868e2996465f9da, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2eb9ce2b11c994c89f78157f158f49, type: 3}
+--- !u!1 &7534460821922824036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4356814312047919483, guid: 8b2eb9ce2b11c994c89f78157f158f49,
+    type: 3}
+  m_PrefabInstance: {fileID: 6123008431918611999}
+  m_PrefabAsset: {fileID: 0}
