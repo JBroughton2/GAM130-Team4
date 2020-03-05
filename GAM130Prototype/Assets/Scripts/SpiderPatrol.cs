@@ -55,7 +55,10 @@ public class SpiderPatrol : MonoBehaviour
 
     IEnumerator PointDelay()
     {
-        yield return new WaitForSeconds(10);
+        anim.SetBool("WalkForwards", false);
+        anim.SetBool("Sensing", true);
+        yield return new WaitForSeconds(7);
+        anim.SetBool("Sensing", false);
         GotoNextPoint();
         Debug.Log("Delaying");
     }
