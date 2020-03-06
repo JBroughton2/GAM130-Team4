@@ -54,8 +54,11 @@ ModelImporter:
     400046: transform192
     400048: transform193
     2100000: lambert13
+    2100002: newlambert
     2300000: polySurface176
+    2300002: //RootNode
     3300000: polySurface176
+    3300002: //RootNode
     4300000: polySurface176
   externalObjects: {}
   materials:
