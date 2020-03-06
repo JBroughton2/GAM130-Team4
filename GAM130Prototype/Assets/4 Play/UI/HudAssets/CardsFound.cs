@@ -25,12 +25,26 @@ public class CardsFound : MonoBehaviour
             greenC.a = 1f;
             Greencard.color = greenC;
         }
+        else
+        {
+            Color greenC = Greencard.color;
+            greenC.a = 0.3f;
+            Greencard.color = greenC;
+
+        }
 
         if (redCardFound)
         {
             Color redC = Redcard.color;
             redC.a = 1f;
             Redcard.color = redC;
+        }
+        else
+        {
+            Color redC = Redcard.color;
+            redC.a = 0.3f;
+            Redcard.color = redC;
+
         }
     }
 
