@@ -1,12 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:GAM130Prototype/Assets/Scenes/Andrea's Scene/NavMesh.asset.meta
-guid: d9320360f4f90094ba68e24488d12fe4
-=======
-guid: 64d781c9011192044a99abf45666959c
->>>>>>> master:GAM130Prototype/Assets/Scenes/SpiTestAndrea/NavMesh.asset.meta
+guid: ec86e718c92456e4083ae591b44738e3
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 23800000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
