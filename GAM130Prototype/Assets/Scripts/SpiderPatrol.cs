@@ -5,24 +5,24 @@ using System.Collections;
 public class SpiderPatrol : MonoBehaviour
 {
     public Transform[] points;
-    public float moveSpeed;
+    private int destPoint = 0;
 
+    [SerializeField] private Animator anim;
     private NavMeshAgent agent;
     private Transform target;
 
-    private int maxDistance = 10;
-    private int minDistance = 5;
-    private int destPoint = 0;
+    private PlayerHealth playerHealth;
+    public float timeBetweenAttacks = 0.5f;
+    public int attackDamage = 10;
+    public float attackRadius;
 
-    [SerializeField] 
-    private float attackRadius;
-    [SerializeField] 
-    private Animator anim;
+
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
+        playerHealth = playerHealth.GetComponent<PlayerHealth>();
 
         agent.autoBraking = false;
         GotoNextPoint();
@@ -56,18 +56,16 @@ public class SpiderPatrol : MonoBehaviour
     IEnumerator PointDelay()
     {
         anim.SetBool("WalkForwards", false);
-        anim.SetBool("Sensing", true);
         yield return new WaitForSeconds(7);
-        anim.SetBool("Sensing", false);
         GotoNextPoint();
-        Debug.Log("Delaying");
+        //Debug.Log("Delaying");
     }
 
     void Chase()
     {
         Vector3 newTargetPostition = new Vector3(target.position.x, this.transform.position.y, target.position.z);
         agent.destination = newTargetPostition;
-        Debug.Log("Is Chasing");
+        //Debug.Log("Is Chasing");
     }
 
     bool IsPlayerNear()
@@ -85,5 +83,11 @@ public class SpiderPatrol : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, attackRadius);
     }
 }
