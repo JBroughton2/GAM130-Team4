@@ -10,6 +10,7 @@ ModelImporter:
     100008: transform40
     100010: transform41
     100012: //RootNode
+    100014: transform290
     400000: pCube7
     400002: pCylinder5
     400004: pCylinder6
@@ -17,9 +18,13 @@ ModelImporter:
     400008: transform40
     400010: transform41
     400012: //RootNode
+    400014: transform290
     2100000: lambert1
+    2100002: newlambert
     2300000: pCylinder6
+    2300002: //RootNode
     3300000: pCylinder6
+    3300002: //RootNode
     4300000: pCylinder6
   externalObjects: {}
   materials:
