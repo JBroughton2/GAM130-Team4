@@ -12,7 +12,7 @@ public class SpiderPatrol : MonoBehaviour
     [SerializeField] private Animator anim;
     private NavMeshAgent agent;
     private Transform target;
-    // private PlayerHealth playerHealth;
+    private PlayerHealth playerHealth;
 
     // Radius for chasing and attacking.
     public float chaseRadius = 25f;
@@ -22,6 +22,7 @@ public class SpiderPatrol : MonoBehaviour
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
 
+    // Booleans
     public bool isNearbyPlayer;
     public bool readyToAttack;
 
@@ -29,7 +30,7 @@ public class SpiderPatrol : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-        // playerHealth = playerHealth.GetComponent<PlayerHealth>();
+        playerHealth = playerHealth.GetComponent<PlayerHealth>();
 
         agent.autoBraking = false;
         GotoNextPoint();
@@ -59,17 +60,13 @@ public class SpiderPatrol : MonoBehaviour
         }
         if (isNearbyPlayer && !readyToAttack)
         {
-            Debug.Log("Chasing");
             Chase();
         }
         if (readyToAttack)
         {
-            Debug.Log("Attacking");
             Attack();
         }
     }
-
-    
 
     IEnumerator PointDelay()
     {
@@ -89,6 +86,13 @@ public class SpiderPatrol : MonoBehaviour
     void Attack()
     {
         anim.SetBool("Attack", true);
+        if (playerHealth.currentHealth > 0)
+        {
+            playerHealth.TakeDamage(attackDamage);
+            Debug.Log("Taking player health.");
+
+
+        }
     }
 
     // Seeing if the player is close enough to the spider.

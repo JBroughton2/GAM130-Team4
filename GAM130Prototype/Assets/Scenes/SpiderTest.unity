@@ -582,8 +582,38 @@ PrefabInstance:
       propertyPath: attackRadius
       value: 12
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1861712330733868193, guid: 5f2b0c59f37da5642b859122138a423e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5f2b0c59f37da5642b859122138a423e, type: 3}
+--- !u!1 &511248430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1861712330733868192, guid: 5f2b0c59f37da5642b859122138a423e,
+    type: 3}
+  m_PrefabInstance: {fileID: 453778666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &511248431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511248430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8920b0aa387b7854d9e3fca302dced98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 522250428}
+  - {fileID: 1710204990}
+  - {fileID: 1000990989}
+  anim: {fileID: 0}
+  chaseRadius: 25
+  attackRadius: 10
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
+  isNearbyPlayer: 0
+  readyToAttack: 0
 --- !u!1 &522250427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,6 +2565,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1861712330733868193, guid: 5f2b0c59f37da5642b859122138a423e,
+        type: 3}
+      propertyPath: points.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1861712330733868193, guid: 5f2b0c59f37da5642b859122138a423e,
         type: 3}

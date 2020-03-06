@@ -14,9 +14,18 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int amount)
     {
+        currentHealth -= amount;
 
+        if (currentHealth <= 0 && !isDead)
+        {
+            Death();
+        }
     }
 
+    void Death()
+    {
+        isDead = true;
+    }
 }
