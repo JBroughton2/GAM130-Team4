@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f54afba4755493459136e04339dc0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decreasing: 0
+  decreasing: 1
   maxOxygen: 100
   Ammount_Decrease: 3
   fillBar: {fileID: 4044174296461898150}
@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ead4452c47ce240be987fd8e2f4d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayLength: 360
+  lengthOfDay: 360
   rotateAmount: 0
   interval: 0
 --- !u!1 &7634250443969717709
@@ -1749,6 +1749,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4044174296344862841}
     m_Modifications:
+    - target: {fileID: 6343747148085565201, guid: f9d60619a5137d94eaf15f0af6d49cae,
+        type: 3}
+      propertyPath: m_Name
+      value: 'BatteryCount '
+      objectReference: {fileID: 0}
     - target: {fileID: 8148774393764184479, guid: f9d60619a5137d94eaf15f0af6d49cae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1853,11 +1858,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343747148085565201, guid: f9d60619a5137d94eaf15f0af6d49cae,
-        type: 3}
-      propertyPath: m_Name
-      value: 'BatteryCount '
       objectReference: {fileID: 0}
     - target: {fileID: 6472048860994752563, guid: f9d60619a5137d94eaf15f0af6d49cae,
         type: 3}
