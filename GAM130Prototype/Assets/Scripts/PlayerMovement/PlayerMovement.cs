@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Referances")]
     [SerializeField]
     private CharacterController m_controller;
-    PlayerInputHandler m_InputHandler;
+    private Camera mainCamera;
+    private PlayerInputHandler m_InputHandler;
     public Animator viewModel;
+
+    [Header("Movement")]
     public float m_speed;
-    public float m_airSpeed;
+    public float m_inAirSpeed;
+    [SerializeField]
+    private float sprintSpeedModifier;
+    private bool isSprinting;
+    private bool crouching;
+
+    [Header("Jumping")]
     public float m_gravity;
     public float m_jumpHeight;
     public Transform m_groundCheck;
@@ -18,7 +28,18 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_velocity;
     bool m_isGrounded;
 
-    // Update is called once per frame
+    [Header("Crouching")]
+    [SerializeField]
+    private Transform crouchingPos;
+
+    void Start()
+    {
+        mainCamera = this.GetComponentInChildren<Camera>();
+        Interactable.setPlayerAnimator(viewModel);
+        isSprinting = false;
+        crouching = false;
+    }
+
     void FixedUpdate()
     {
         m_isGrounded = Physics.CheckSphere(m_groundCheck.position, m_groundDistance, m_groundMask);
@@ -31,16 +52,46 @@ public class PlayerMovement : MonoBehaviour
 
         if (m_isGrounded)
         {
+            viewModel.SetBool("Grounded", true);
+            viewModel.ResetTrigger("Jump");
             Movement();
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                isSprinting = true;
+                Sprinting();
+            }
+            else
+            {
+                isSprinting = false;
+            }
+
+            if (isSprinting)
+            {
+                viewModel.SetBool("Sprint", true);
+            }
+            else if (!isSprinting)
+            {
+                viewModel.SetBool("Sprint", false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftControl) && !crouching)
+            {
+                crouching = true;
+                Crouching();
+            }
+
+
         }
         else if (!m_isGrounded)
         {
+            viewModel.SetBool("Grounded", false);
+
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
             Vector3 moveAir = transform.right * x + transform.forward * z;
 
-            m_controller.Move(moveAir * m_airSpeed * Time.deltaTime);
+            m_controller.Move(moveAir * m_inAirSpeed * Time.deltaTime);
         }
 
         if (Input.GetButtonDown("Jump") && m_isGrounded)
@@ -61,15 +112,29 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        Vector3 move = transform.right * x + transform.forward * z;
+        
+        m_controller.Move(move * m_inAirSpeed * Time.deltaTime);
+    }
 
+    void Sprinting()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * z;
 
-        m_controller.Move(move * m_speed * Time.deltaTime);
+        m_controller.Move(move * m_inAirSpeed * sprintSpeedModifier * Time.deltaTime);
     }
 
-    void AirMovement()
+    void Crouching()
     {
-        
+        if (crouching)
+        {
+            mainCamera.transform.position = crouchingPos.position;
+        }
+
     }
+
+
 
 }

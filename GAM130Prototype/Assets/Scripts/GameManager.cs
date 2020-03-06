@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     //'global' objects
     public static GameObject s_player;
-    public static PlayerCharacterController s_playerCharacterController;
+    public static PlayerMovement s_playerCharacterController;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
         //get global objects
         s_player = GameObject.Find("Player");
-        if (s_player != null) s_playerCharacterController = s_player.GetComponent<PlayerCharacterController>();
+        if (s_player != null) s_playerCharacterController = s_player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
