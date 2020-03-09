@@ -25,12 +25,17 @@ public class SpiderPatrol : MonoBehaviour
     // Booleans
     public bool isNearbyPlayer;
     public bool readyToAttack;
+    public bool grounded;
+
+    // Raycasting variables
+    private Vector3 currentPosition;
+    private Quaternion currentRotation;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-        playerHealth = playerHealth.GetComponent<PlayerHealth>();
+        // playerHealth = playerHealth.GetComponent<PlayerHealth>();
 
         agent.autoBraking = false;
         GotoNextPoint();
@@ -66,7 +71,33 @@ public class SpiderPatrol : MonoBehaviour
         {
             Attack();
         }
+
+        // Raycasting to rotate the spider over terrain
+        Ray ray = new Ray(transform.position, -transform.up);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, 1.5f) == true)
+        {
+            Debug.DrawLine(transform.position, hit.point, Color.blue);
+            currentRotation = Quaternion.FromToRotation(transform.up, hit.normal);
+            currentPosition = new Vector3(transform.position.x, hit.point.y, transform.position.z);
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
+        if(grounded == true)
+        {
+            transform.position = Vector3.Lerp(transform.position, currentPosition, Time.deltaTime * 5);
+            transform.rotation = Quaternion.Lerp(transform.rotation, currentRotation, Time.deltaTime * 5);
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(transform.position, transform.position - Vector3.up * 1f, Time.deltaTime * 5);
+        }
     }
+
+
 
     IEnumerator PointDelay()
     {
