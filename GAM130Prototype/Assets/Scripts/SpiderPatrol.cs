@@ -121,8 +121,6 @@ public class SpiderPatrol : MonoBehaviour
         {
             playerHealth.TakeDamage(attackDamage);
             Debug.Log("Taking player health.");
-
-
         }
     }
 
@@ -138,7 +136,6 @@ public class SpiderPatrol : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
@@ -154,7 +151,6 @@ public class SpiderPatrol : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
