@@ -43,7 +43,7 @@ public class ClockScript : MonoBehaviour
         rotateAmount = -(360f / dayLength) * timeOfDay;
 
 
-
+        // add hours and minutes here.
 
     }
 }
