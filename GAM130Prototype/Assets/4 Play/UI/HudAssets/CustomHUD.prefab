@@ -765,6 +765,7 @@ GameObject:
   - component: {fileID: 4044174295970498161}
   - component: {fileID: 4044174295970498167}
   - component: {fileID: 4044174295970498165}
+  - component: {fileID: 8715846174741965985}
   m_Layer: 0
   m_Name: UIBehaviour
   m_TagString: Untagged
@@ -859,6 +860,19 @@ MonoBehaviour:
   LogText: {fileID: 4044174295428545579}
   jornalDatas: []
   logButtonParent: {fileID: 4044174295634425448}
+--- !u!114 &8715846174741965985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044174295970498162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d502d94ca9756e49ac61d4508190f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayLength: 59
 --- !u!1 &4044174295977107425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,7 +1424,7 @@ GameObject:
   - component: {fileID: 1843003082693022526}
   - component: {fileID: 5911602560772905470}
   - component: {fileID: 4932479066205524928}
-  - component: {fileID: 1074938982148993765}
+  - component: {fileID: 7460521297551353503}
   m_Layer: 5
   m_Name: ClockFace
   m_TagString: Untagged
@@ -1474,7 +1488,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &1074938982148993765
+--- !u!114 &7460521297551353503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1486,9 +1500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ead4452c47ce240be987fd8e2f4d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lengthOfDay: 360
-  rotateAmount: 0
-  interval: 0
+  clock: {fileID: 4044174295970498162}
 --- !u!1 &7634250443969717709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,11 +1761,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4044174296344862841}
     m_Modifications:
-    - target: {fileID: 6343747148085565201, guid: f9d60619a5137d94eaf15f0af6d49cae,
-        type: 3}
-      propertyPath: m_Name
-      value: 'BatteryCount '
-      objectReference: {fileID: 0}
     - target: {fileID: 8148774393764184479, guid: f9d60619a5137d94eaf15f0af6d49cae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1859,6 +1866,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6343747148085565201, guid: f9d60619a5137d94eaf15f0af6d49cae,
+        type: 3}
+      propertyPath: m_Name
+      value: 'BatteryCount '
+      objectReference: {fileID: 0}
     - target: {fileID: 6472048860994752563, guid: f9d60619a5137d94eaf15f0af6d49cae,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1887,12 +1899,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9d60619a5137d94eaf15f0af6d49cae, type: 3}
---- !u!224 &367871718175125035 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8148774393764184479, guid: f9d60619a5137d94eaf15f0af6d49cae,
-    type: 3}
-  m_PrefabInstance: {fileID: 8362254613174333364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1193984056665219805 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7250039415335161193, guid: f9d60619a5137d94eaf15f0af6d49cae,
@@ -1905,3 +1911,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468c2aeb40ad3e5409a01478644b4bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &367871718175125035 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8148774393764184479, guid: f9d60619a5137d94eaf15f0af6d49cae,
+    type: 3}
+  m_PrefabInstance: {fileID: 8362254613174333364}
+  m_PrefabAsset: {fileID: 0}

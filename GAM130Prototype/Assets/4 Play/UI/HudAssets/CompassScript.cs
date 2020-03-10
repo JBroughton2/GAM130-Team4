@@ -5,22 +5,20 @@ using UnityEngine;
 public class CompassScript : MonoBehaviour
 {
 
-    [Range (0,1200)]
-    public float lengthOfDay = 360;
-    public float rotateAmount;
-    public float interval;
+    public GameObject clock;
+
+    private float rotateAmount;
+    
+ 
     Vector3 dir;
     
     private void Update()
     {
-        interval = -(360f / lengthOfDay);  //rull rotation(360) / daylength = rotate interval
-        Debug.Log(interval);
-        interval = interval * Time.deltaTime;
+        rotateAmount = clock.GetComponent<ClockScript>().getRotateAmount();
+        Debug.Log(rotateAmount);
 
-
-        rotateAmount = rotateAmount + interval;
+        
         dir.z = rotateAmount;
-
         transform.localEulerAngles = dir;
     }
 
