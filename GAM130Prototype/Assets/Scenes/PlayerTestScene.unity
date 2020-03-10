@@ -112,6 +112,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &92257872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92257873}
+  m_Layer: 0
+  m_Name: CrouchingReset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &92257873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92257872}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.024, y: 0.681, z: 0.027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1833981934}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143334339
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,10 +566,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewArmsRigBase
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 0a2b6e89003c7904f8d5686e455e126d, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: ff9df6869a94f2d46893c83b56ec2f64, type: 2}
     - target: {fileID: 400916, guid: 0a2b6e89003c7904f8d5686e455e126d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -596,6 +622,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 0a2b6e89003c7904f8d5686e455e126d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ff9df6869a94f2d46893c83b56ec2f64, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a2b6e89003c7904f8d5686e455e126d, type: 3}
 --- !u!1 &625130254
@@ -1697,8 +1727,8 @@ MonoBehaviour:
   m_controller: {fileID: 1833981933}
   viewModel: {fileID: 1013232803}
   m_speed: 10
-  m_inAirSpeed: 4
-  sprintSpeedModifier: 1
+  m_inAirSpeed: 5
+  sprintSpeedModifier: 1.5
   m_gravity: -20
   m_jumpHeight: 2
   m_groundCheck: {fileID: 600669626}
@@ -1707,6 +1737,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   crouchingPos: {fileID: 663775898}
+  crouchingPosReset: {fileID: 92257873}
 --- !u!143 &1833981933
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1740,6 +1771,7 @@ Transform:
   - {fileID: 1257251632}
   - {fileID: 600669626}
   - {fileID: 663775898}
+  - {fileID: 92257873}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

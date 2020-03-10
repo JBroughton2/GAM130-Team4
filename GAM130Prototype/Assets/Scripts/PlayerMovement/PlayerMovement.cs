@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float sprintSpeedModifier;
     private bool isSprinting;
-    private bool crouching;
+
 
     [Header("Jumping")]
     public float m_gravity;
@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Crouching")]
     [SerializeField]
     private Transform crouchingPos;
+    [SerializeField]
+    private Transform crouchingPosReset;
+    private bool crouching;
 
     void Start()
     {
@@ -74,10 +77,18 @@ public class PlayerMovement : MonoBehaviour
                 viewModel.SetBool("Sprint", false);
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftControl) && !crouching)
+            if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                crouching = true;
-                Crouching();
+                crouching = !crouching;
+
+                if (crouching)
+                {
+                    CrouchingDown();
+                }
+                else
+                {
+                    CrouchingUp();   
+                }
             }
 
 
@@ -94,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
             m_controller.Move(moveAir * m_inAirSpeed * Time.deltaTime);
         }
 
-        if (Input.GetButtonDown("Jump") && m_isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && m_isGrounded)
         {
             Jump();
         }
@@ -126,13 +137,18 @@ public class PlayerMovement : MonoBehaviour
         m_controller.Move(move * m_inAirSpeed * sprintSpeedModifier * Time.deltaTime);
     }
 
-    void Crouching()
+    void CrouchingDown()
     {
-        if (crouching)
-        {
-            mainCamera.transform.position = crouchingPos.position;
-        }
+        mainCamera.transform.position = crouchingPos.position;
+        m_controller.height = 1.0f;
+        transform.position = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
+    }
 
+    void CrouchingUp()
+    {
+        mainCamera.transform.position = crouchingPosReset.position;
+        m_controller.height = 2.0f;
+        transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
     }
 
 
