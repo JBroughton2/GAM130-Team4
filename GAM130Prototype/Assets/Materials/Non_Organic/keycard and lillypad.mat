@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Non_Organic_Props Maskable
+  m_Name: keycard and lillypad
   m_Shader: {fileID: 4800000, guid: a83eb6e6f285a5f448ab43134b6b820f, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
