@@ -36,8 +36,11 @@ ModelImporter:
     400028: assets:transform9
     400030: //RootNode
     2100000: lambert1
+    2100002: newlambert
     2300000: assets:polySurface1
+    2300002: //RootNode
     3300000: assets:polySurface1
+    3300002: //RootNode
     4300000: assets:polySurface1
   externalObjects: {}
   materials:
