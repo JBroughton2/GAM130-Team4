@@ -10,20 +10,19 @@ using System.Globalization;
 public class BatteryScript : MonoBehaviour
 {
     public int batteries = 5;
-    public Text powerLevelText;
+    [Range (0.1f,20)]
     public float decreaseAmmount = 0.1f;
-    public bool torchUsed = false;
-    public float DelayTime = 0.1f;
+    public bool torchUsed = false;    
     public float displayCharge;
-    public ResourceIcon battIcon;
-
     private bool batteryPickup = false;
     private int fullCharge = 100;
     private float currentCharge = 0;
     private string StrDisplayCharge;
 
-    private Coroutine TimeDelayRoutine;
+    
     public Action OnBattUpdate;
+    public Text powerLevelText;
+    public ResourceIcon battIcon;
 
 
     private void Awake()
@@ -32,13 +31,6 @@ public class BatteryScript : MonoBehaviour
         UpdateBattDisplay();
     }
 
-    private IEnumerator TimeDelay()
-    {
-        //Debug.Log("Before");
-        yield return new WaitForSeconds(DelayTime);
-        //Debug.Log("After");
-        TimeDelayRoutine = null;
-    }
 
 
     public void UpdateBattDisplay()
@@ -71,9 +63,7 @@ public class BatteryScript : MonoBehaviour
 
                 else
                 {
-                    currentCharge = currentCharge - decreaseAmmount * Time.deltaTime;
-                    if (TimeDelayRoutine == null)
-                        TimeDelayRoutine = StartCoroutine(TimeDelay());
+                    currentCharge = currentCharge - decreaseAmmount * Time.deltaTime;                    
                 }
             }
         }
@@ -105,13 +95,13 @@ public class BatteryScript : MonoBehaviour
 
         UsePower();
 
-        //Debug.Log(currentCharge);
+        
         // need to display battery percentage in the text next to lightning bolt rounding within 5%? or to full number
 
-        //displayText.text = varname+"%";
+        
         displayCharge = currentCharge / fullCharge * 100;
 
-        StrDisplayCharge = displayCharge.ToString("0.00", CultureInfo.InvariantCulture);
+        StrDisplayCharge = displayCharge.ToString("0.0", CultureInfo.InvariantCulture);
         powerLevelText.text = StrDisplayCharge + "%";
     }
 }
