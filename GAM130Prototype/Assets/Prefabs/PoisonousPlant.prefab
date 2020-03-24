@@ -4646,7 +4646,7 @@ ParticleSystemRenderer:
   m_GameObject: {fileID: 230916323627087768}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
@@ -9344,7 +9344,7 @@ ParticleSystemRenderer:
   m_GameObject: {fileID: 343859861860857406}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
@@ -14042,7 +14042,7 @@ ParticleSystemRenderer:
   m_GameObject: {fileID: 2153520923239387201}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
@@ -18740,7 +18740,7 @@ ParticleSystemRenderer:
   m_GameObject: {fileID: 7413800031496449541}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
