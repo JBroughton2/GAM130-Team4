@@ -7,13 +7,6 @@ public class NotificationHUDManager : MonoBehaviour
     [Tooltip("Prefab for the notifications")]
     public GameObject notificationPrefab;
 
-
-    void OnUpdateObjective(UnityActionUpdateObjective updateObjective)
-    {
-        if (!string.IsNullOrEmpty(updateObjective.notificationText))
-            CreateNotification(updateObjective.notificationText);
-    }
-
     void OnPickupWeapon(WeaponController weaponController, int index)
     {
         if (index != 0)
@@ -32,13 +25,4 @@ public class NotificationHUDManager : MonoBehaviour
         }
     }
 
-    public void RegisterObjective(Objective objective)
-    {
-        objective.onUpdateObjective += OnUpdateObjective;
-    }
-
-    public void UnregisterObjective(Objective objective)
-    {
-        objective.onUpdateObjective -= OnUpdateObjective;
-    }
 }
