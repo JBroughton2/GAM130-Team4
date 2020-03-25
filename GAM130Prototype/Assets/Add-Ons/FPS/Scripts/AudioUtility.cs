@@ -29,9 +29,6 @@ public class AudioUtility
         source.Play();
 
         source.outputAudioMixerGroup = GetAudioGroup(audioGroup);
-
-        TimedSelfDestruct timedSelfDestruct = impactSFXInstance.AddComponent<TimedSelfDestruct>();
-        timedSelfDestruct.lifeTime = clip.length;
     }
 
     public static AudioMixerGroup GetAudioGroup(AudioGroups group)

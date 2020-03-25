@@ -99,23 +99,11 @@ public class PlayerCharacterController : MonoBehaviour
     public bool hasJumpedThisFrame { get; private set; }
     public bool isDead { get; private set; }
     public bool isCrouching { get; private set; }
-    public float RotationMultiplier
-    {
-        get
-        {
-            if (m_WeaponsManager.isAiming)
-            {
-                return aimingRotationMultiplier;
-            }
 
-            return 1f;
-        }
-    }
         
     Health m_Health;
     PlayerInputHandler m_InputHandler;
     CharacterController m_Controller;
-    PlayerWeaponsManager m_WeaponsManager;
     Actor m_Actor;
     Vector3 m_GroundNormal;
     Vector3 m_CharacterVelocity;
@@ -136,9 +124,6 @@ public class PlayerCharacterController : MonoBehaviour
 
         m_InputHandler = GetComponent<PlayerInputHandler>();
         DebugUtility.HandleErrorIfNullGetComponent<PlayerInputHandler, PlayerCharacterController>(m_InputHandler, this, gameObject);
-
-        m_WeaponsManager = GetComponent<PlayerWeaponsManager>();
-        DebugUtility.HandleErrorIfNullGetComponent<PlayerWeaponsManager, PlayerCharacterController>(m_WeaponsManager, this, gameObject);
 
         m_Health = GetComponent<Health>();
         DebugUtility.HandleErrorIfNullGetComponent<Health, PlayerCharacterController>(m_Health, this, gameObject);
@@ -214,9 +199,6 @@ public class PlayerCharacterController : MonoBehaviour
     void OnDie()
     {
         isDead = true;
-
-        // Tell the weapons manager to switch to a non-existing weapon in order to lower the weapon
-        m_WeaponsManager.SwitchToWeaponIndex(-1, true);
     }
 
     void GroundCheck()
@@ -256,16 +238,9 @@ public class PlayerCharacterController : MonoBehaviour
 
     void HandleCharacterMovement()
     {
-        // horizontal character rotation
-        {
-            // rotate the transform with the input speed around its local Y axis
-            transform.Rotate(new Vector3(0f, (m_InputHandler.GetLookInputsHorizontal() * rotationSpeed * RotationMultiplier), 0f), Space.Self);
-        }
 
         // vertical camera rotation
         {
-            // add vertical inputs to the camera's vertical angle
-            m_CameraVerticalAngle += m_InputHandler.GetLookInputsVertical() * rotationSpeed * RotationMultiplier;
 
             // limit the camera's vertical angle to min/max
             m_CameraVerticalAngle = Mathf.Clamp(m_CameraVerticalAngle, -89f, 89f);

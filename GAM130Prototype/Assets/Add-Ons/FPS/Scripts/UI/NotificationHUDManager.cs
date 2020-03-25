@@ -8,14 +8,6 @@ public class NotificationHUDManager : MonoBehaviour
     public GameObject notificationPrefab;
 
 
-    void Awake()
-    {
-        PlayerWeaponsManager playerWeaponsManager = FindObjectOfType<PlayerWeaponsManager>();
-        DebugUtility.HandleErrorIfNullFindObject<PlayerWeaponsManager, NotificationHUDManager>(playerWeaponsManager, this);
-        playerWeaponsManager.onAddedWeapon += OnPickupWeapon;
-
-    }
-
     void OnUpdateObjective(UnityActionUpdateObjective updateObjective)
     {
         if (!string.IsNullOrEmpty(updateObjective.notificationText))
@@ -26,11 +18,6 @@ public class NotificationHUDManager : MonoBehaviour
     {
         if (index != 0)
             CreateNotification("Picked up weapon : " + weaponController.weaponName);
-    }
-
-    void OnUnlockJetpack(bool unlock)
-    {
-        CreateNotification("Jetpack unlocked");
     }
 
     public void CreateNotification(string text)

@@ -32,34 +32,5 @@ public class AmmoCounter : MonoBehaviour
 
     public int weaponCounterIndex { get; set; }
 
-    PlayerWeaponsManager m_PlayerWeaponsManager;
-    WeaponController m_Weapon;
 
-    public void Initialize(WeaponController weapon, int weaponIndex)
-    {
-        m_Weapon = weapon;
-        weaponCounterIndex = weaponIndex;
-        weaponImage.sprite = weapon.weaponIcon;
-
-        m_PlayerWeaponsManager = FindObjectOfType<PlayerWeaponsManager>();
-        DebugUtility.HandleErrorIfNullFindObject<PlayerWeaponsManager, AmmoCounter>(m_PlayerWeaponsManager, this);
-
-        weaponIndexText.text = (weaponCounterIndex + 1).ToString();
-
-        FillBarColorChange.Initialize(1f, m_Weapon.GetAmmoNeededToShoot());
-    }
-
-    void Update()
-    {
-        float currenFillRatio = m_Weapon.currentAmmoRatio;
-        ammoFillImage.fillAmount = Mathf.Lerp(ammoFillImage.fillAmount, currenFillRatio, Time.deltaTime * ammoFillMovementSharpness);
-
-        bool isActiveWeapon = m_Weapon == m_PlayerWeaponsManager.GetActiveWeapon();
-
-        canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha , isActiveWeapon ? 1f : unselectedOpacity, Time.deltaTime * 10);
-        transform.localScale = Vector3.Lerp(transform.localScale, isActiveWeapon ? Vector3.one : unselectedScale, Time.deltaTime * 10);
-        controlKeysRoot.SetActive(!isActiveWeapon);
-
-        FillBarColorChange.UpdateVisual(currenFillRatio);
-    }
 }
