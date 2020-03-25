@@ -275,45 +275,6 @@ public class MiniProfiler : EditorWindow
         Bounds levelBounds = new Bounds();
         Renderer[] allRenderers = GameObject.FindObjectsOfType<Renderer>();
 
-        // Get level bounds and list of bounds & polycount
-        for (int i = 0; i < allRenderers.Length; i++)
-        {
-            Renderer r = allRenderers[i];
-            if (r.gameObject.GetComponent<IgnoreHeatMap>())
-                continue;
-
-            levelBounds.Encapsulate(r.bounds);
-
-            MeshRenderer mr = (r as MeshRenderer);
-            if (mr)
-            {
-                MeshFilter mf = r.GetComponent<MeshFilter>();
-                if (mf && mf.sharedMesh != null)
-                {
-                    BoundsAndCount b = new BoundsAndCount();
-                    b.bounds = r.bounds;
-                    b.count = mf.sharedMesh.triangles.Length / 3;
-
-                    meshBoundsAndCount.Add(b);
-                }
-            }
-            else
-            {
-                SkinnedMeshRenderer smr = (r as SkinnedMeshRenderer);
-                if (smr)
-                {
-                    if (smr.sharedMesh != null)
-                    {
-                        BoundsAndCount b = new BoundsAndCount();
-                        b.bounds = r.bounds;
-                        b.count = smr.sharedMesh.triangles.Length / 3;
-
-                        meshBoundsAndCount.Add(b);
-                    }
-                }
-            }
-        }
-
         Vector3 boundsBottomCorner = levelBounds.center - levelBounds.extents;
         Vector3Int gridResolution = new Vector3Int(Mathf.CeilToInt((levelBounds.extents.x * 2f) / k_CellSize), Mathf.CeilToInt((levelBounds.extents.y * 2f) / k_CellSize), Mathf.CeilToInt((levelBounds.extents.z * 2f) / k_CellSize));
 

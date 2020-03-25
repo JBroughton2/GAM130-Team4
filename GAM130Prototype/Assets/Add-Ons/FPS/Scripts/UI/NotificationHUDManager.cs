@@ -14,9 +14,6 @@ public class NotificationHUDManager : MonoBehaviour
         DebugUtility.HandleErrorIfNullFindObject<PlayerWeaponsManager, NotificationHUDManager>(playerWeaponsManager, this);
         playerWeaponsManager.onAddedWeapon += OnPickupWeapon;
 
-        Jetpack jetpack = FindObjectOfType<Jetpack>();
-        DebugUtility.HandleErrorIfNullFindObject<Jetpack, NotificationHUDManager>(jetpack, this);
-        jetpack.onUnlockJetpack += OnUnlockJetpack;
     }
 
     void OnUpdateObjective(UnityActionUpdateObjective updateObjective)

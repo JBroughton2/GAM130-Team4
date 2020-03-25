@@ -41,8 +41,6 @@ public class WeaponController : MonoBehaviour
     [Header("Shoot Parameters")]
     [Tooltip("The type of weapon wil affect how it shoots")]
     public WeaponShootType shootType;
-    [Tooltip("The projectile prefab")]
-    public ProjectileBase projectilePrefab;
     [Tooltip("Minimum duration between two shots")]
     public float delayBetweenShots = 0.5f;
     [Tooltip("Angle for the cone in which the bullets will be shot randomly (0 means no spread at all)")]
@@ -276,14 +274,6 @@ public class WeaponController : MonoBehaviour
 
     void HandleShoot()
     {
-        // spawn all bullets with random direction
-        for (int i = 0; i < bulletsPerShot; i++)
-        {
-            Vector3 shotDirection = GetShotDirectionWithinSpread(weaponMuzzle);
-            ProjectileBase newProjectile = Instantiate(projectilePrefab, weaponMuzzle.position, Quaternion.LookRotation(shotDirection));
-            newProjectile.Shoot(this);
-        }
-
         // muzzle flash
         if (muzzleFlashPrefab != null)
         {
