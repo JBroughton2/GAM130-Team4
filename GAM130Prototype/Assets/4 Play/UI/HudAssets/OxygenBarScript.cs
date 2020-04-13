@@ -48,6 +48,16 @@ public class OxygenBarScript : MonoBehaviour
                 newColour.a = alpha;
                 child.color = newColour;                
             }
+            //start
+            Text[] barTextChildren = OxygenBar.GetComponentsInChildren<Text>();
+            Color newTextColour;
+            foreach (Text child in barTextChildren)
+            {
+                newTextColour = child.color;
+                newTextColour.a = alpha;
+                child.color = newTextColour;
+            }//end
+
 
             yield return new WaitForEndOfFrame();
             t = (Time.time - start) / length;
